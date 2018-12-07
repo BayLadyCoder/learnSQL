@@ -60,6 +60,15 @@ StringTypes: VARCHAR (a Variable-Length String between 1 and 255 characters)
 VARCHAR(100) <<-- must specify the maximum length, in this case is 100
 
 
+Basic Data Types Challenge 
+Draw a Tweets Table
+- A username (Max 15 chars)
+- The Tweet Content (max 150 chars)
+- Numbers of favorites
 
+  VARCHAR(15) VARCHAR(150)       INT
+  Username  /   Content  /   Favorites
+  'Katniss' /   'Hello'  /      18
+  'Sammy'   /   'YO!'	/       22
 
 
