@@ -95,6 +95,26 @@ Ex. SHOW COLUMNS FROM cats;
 Ex. DESC cats;  // Describe...
 
 DELETE TABLES
-DROP TABLE <tablename>;
+DROP TABLE <tablename>; 
 
-Ex. DROP TABLE cats;
+Ex. DROP TABLE cats;  //deleting this table permanently!!
+
+
+
+Create a Pastries Table Challenge
+- it should include 2 columns: name and quantity.
+- Name is 50 characters max.
+- Inspect your table/columns in the Terminal.
+- Delete your table.
+
+Implementation:
+
+CREATE TABLE pastries (
+    name VARCHAR(50),
+    quantity INT
+);
+
+DESC pastries;
+DROP TABLE pastries;
+
+-------------------------------------------------------------------------------
