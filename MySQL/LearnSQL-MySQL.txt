@@ -54,8 +54,12 @@ SELECT database();  //Checking which database is used right now
 
 
 Data Types (for now)
-Numeric Types : INT
-StringTypes: VARCHAR
+Numeric Types : INT (a whole number with max value of 4294967295 <-- UNSIGNED INT MAXIMUM)
+StringTypes: VARCHAR (a Variable-Length String between 1 and 255 characters)
+
+VARCHAR(100) <<-- must specify the maximum length, in this case is 100
+
+
 
 
 
