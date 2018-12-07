@@ -85,3 +85,11 @@ CREATE TABLE cats
     name VARCHAR(100),
     age INT
 );
+
+
+SHOW
+SHOW TABLES;
+SHOW COLUMNS FROM <tablename>;  OR --> DESC <tablename>; //do the same thing in this context
+
+Ex. SHOW COLUMNS FROM cats;
+Ex. DESC cats;  // Describe...
