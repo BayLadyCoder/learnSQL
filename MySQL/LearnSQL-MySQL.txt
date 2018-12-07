@@ -1,0 +1,61 @@
+Learn SQL -MySQL
+
+SQL is the language we use to “talk” to our database
+“Find all users”
+“Add a  new User with Name Bay”
+“Find all users who are 18 years old”
+
+
+Quick Preview
+“Find all users who are 18 or older”
+==>> SELECT * FROM Users WHERE Age >= 18;
+
+MySQL is Database Management System
+Relational Databases
+(MySQL, SQLite, PostgreSQL, Oracle, Many others) ==> All Use SQL
+
+Two Takeaways
+Once you learn SQL, it’s pretty easy to switch to another DB that uses SQL.
+What makes database (DBMS) unique are the features they offer, not the language.
+
+
+How to use mySQL
+Turn on the server in System Preference -> mySQL -> Start Server
+In Terminal type mysql -u root -p
+Then type password that I created for mySQL
+
+
+in Terminal, to close out of mySQL press control+d
+
+
+In mySQL (inside Terminal)
+
+SHOW databases
+show databases; //showing all databases in the DB server
+
+CREATE a Databases
+CREATE DATABASE <name>;  //creating a new database
+Ex. CREATE DATABASE soap_store; //Can use underscore
+Ex. CREATE DATABASE DogApp; //or CamalCase
+
+
+DELETE a Database
+DROP DATABASE <name>;
+Ex. DROP DATABASE soap_store;
+Ex. DROP DATABASE DogApp;
+
+
+USE a database
+USE <database name>;
+Ex. USE DogApp;
+
+SELECT database
+SELECT database();  //Checking which database is used right now
+
+
+Data Types (for now)
+Numeric Types : INT
+StringTypes: VARCHAR
+
+
+
