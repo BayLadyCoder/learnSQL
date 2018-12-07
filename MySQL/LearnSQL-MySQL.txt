@@ -72,3 +72,16 @@ Draw a Tweets Table
   'Sammy'   /   'YO!'	/       22
 
 
+CREATE TABLE
+CREAT TABLE tablename
+( 
+  column_name data_type,
+  column_name data_type
+);
+
+Ex. 
+CREATE TABLE cats 
+(
+    name VARCHAR(100),
+    age INT
+);
