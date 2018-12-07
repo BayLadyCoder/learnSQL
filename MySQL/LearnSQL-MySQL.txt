@@ -93,3 +93,8 @@ SHOW COLUMNS FROM <tablename>;  OR --> DESC <tablename>; //do the same thing in 
 
 Ex. SHOW COLUMNS FROM cats;
 Ex. DESC cats;  // Describe...
+
+DELETE TABLES
+DROP TABLE <tablename>;
+
+Ex. DROP TABLE cats;
