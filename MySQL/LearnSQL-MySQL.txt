@@ -141,3 +141,44 @@ VALUES ('Cat1', 10),
 
 SELECT
 SELECT * FROM cats;  //To view all the data in the table
+
+INSERT Challenge
+1. Create a people table
+2. Columns 
+--> first_name (20 char limit)
+--> last_name (20 char limit)
+--> age
+3. Insert first person --> Tina Belcher 13 (First, Last, Age)
+4. Insert second person --> Belcher Bob 42 (Last, First, Age)
+5. Multiple insert
+--> Linda Belcher 45 (First, Last, Age)
+--> Phillip Frond 38 (First, Last, Age)
+--> Calvin Fischoeder 70 (First, Last, Age)
+
+Implementation:
+
+CREAT TABLE people (
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    age INT
+);
+
+DESC people;
+
+INSERT INTO people (first_name, last_name, age)
+VALUES ('Tina', 'Belcher', 13);
+
+INSERT INTO people (last_name, first_name, age)
+VALUES ('Belcher', 'Bob', 42);
+
+INSERT INTO people (first_name, last_name, age)
+VALUES ('Linda', 'Belcher', 45),
+        ('Phillip', 'Frond', 38),
+        ('Calvin', 'Fischoeder', 70);
+
+SELECT * FROM people;
+
+DROP TABLE people;
+
+SHOW TABLES;
+-------------------------------------------------------------------------------
