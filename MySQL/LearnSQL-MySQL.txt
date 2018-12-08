@@ -222,6 +222,28 @@ So, when we insert values incompletely...
 if the empty value is an INT, it will set to a default value which is 0.
 if the empty value is a VARCHAR, it will set to the default value which is '' (nothing).
 
+-------------------------------------------------------------------------------
 
+To Set Default values 1 (NULL is available to use as a value)
+CREATE TABLE cats3
+(
+    name VARCHAR(100) DEFAULT 'unnamed',
+    age INT DEFAULT 99
+);
+
+Ex.
+INSERT INTO cats3 (name, age)
+VALUES (NULL, 3); // Null is allowed in this case
+
+
+To Set Default values 2 (NULL is NOT available to use as a value)
+CREATE TABLE cats3
+(
+    name VARCHAR(100) NOT NULL DEFAULT 'unnamed',
+    age INT NOT NULL DEFAULT 99
+);
+
+INSERT INTO cats3 (name, age)
+VALUES (NULL, 3); // Null is NOT allowed in this case, it will give an error
 
 
