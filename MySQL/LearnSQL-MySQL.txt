@@ -21,7 +21,8 @@ What makes database (DBMS) unique are the features they offer, not the language.
 
 How to use mySQL
 Turn on the server in System Preference -> mySQL -> Start Server
-In Terminal type mysql -u root -p
+In Terminal, paste --> export PATH=$PATH:/usr/local/mysql/bin
+Then type --> mysql -u root -p
 Then type password that I created for mySQL
 
 
@@ -129,3 +130,8 @@ VALUES ('Jetson', 7);
 Ex.
 INSERT INTO cats (age, name)
 VALUES (7, "Jetson");
+
+
+
+SELECT
+SELECT * FROM cats;  //To view all the data in the table
