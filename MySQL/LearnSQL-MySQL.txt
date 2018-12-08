@@ -132,6 +132,12 @@ INSERT INTO cats (age, name)
 VALUES (7, "Jetson");
 
 
+MULTIPLE INSERT
+Ex. 
+INSERT INTO cats (name, age)
+VALUES ('Cat1', 10),
+        ('Cat2', 12),
+        ('Cat3', 5);
 
 SELECT
 SELECT * FROM cats;  //To view all the data in the table
