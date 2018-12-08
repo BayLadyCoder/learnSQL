@@ -196,3 +196,32 @@ SHOW WARNINGS;
 (This command will describe the warning problems)
 *** only show when you use this command right after you get the warning. ***
 
+-------------------------------------------------------------------------------
+NULL == "The Value is not Known", it does NOT mean ZERO.
+
+Permit to be NULL is a default value for all column headers.
+
+So, if we insert just name but not insert a value for age the value for age will become NULL
+Ex. INSERT INTO cats (name) VALUES ('Bob');
+OR, Null for all.
+Ex. INSERT INTO cats () VALUES ();
+
+Checking default values in the table
+DESC cats; 
+
+TO PREVENT NULL VALUES
+use NOT NULL when creating/declaring a table.
+
+Ex. CREATE TABLE cats2
+    (
+        name VARCHAR(100) NOT NULL,
+        age INT NOT NULL
+    );
+
+So, when we insert values incompletely...
+if the empty value is an INT, it will set to a default value which is 0.
+if the empty value is a VARCHAR, it will set to the default value which is '' (nothing).
+
+
+
+
