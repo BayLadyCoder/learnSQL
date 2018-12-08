@@ -182,3 +182,17 @@ DROP TABLE people;
 
 SHOW TABLES;
 -------------------------------------------------------------------------------
+
+WARNINGS
+We get warnings...
+- When we input too many characters (more than the character limit that we declare)
+- When we input wrong datatype Ex. input String in INT datatype
+
+It will be like...
+Ex. Query OK, 1 row affected, 1 warning(0.00 sec)
+
+Then we can view the warnings by use this command
+SHOW WARNINGS;
+(This command will describe the warning problems)
+*** only show when you use this command right after you get the warning. ***
+
