@@ -118,3 +118,14 @@ DESC pastries;
 DROP TABLE pastries;
 
 -------------------------------------------------------------------------------
+
+INSERT
+Adding data to Tables
+
+Ex.
+INSERT INTO cats(name, age)
+VALUES ('Jetson', 7);
+
+Ex.
+INSERT INTO cats (age, name)
+VALUES (7, "Jetson");
