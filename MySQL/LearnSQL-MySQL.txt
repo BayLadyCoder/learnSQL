@@ -268,3 +268,17 @@ INSERT INTO unique_cats (cat_id, name, age)
 VALUES (1, "Sam", 10); // Duplicated value for cat_id(Primary key), it will give you an error.
 
 
+AUTO INCREMENT numbers for PRIMARY KEY
+So, we don't have to manually type each ID when entry new data
+
+Ex.
+CREATE TABLE unique_cats2 (
+    cat_id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100),
+    age INT,
+    PRIMARY KEY (cat_id)
+);
+
+Ex.  // Automatically creating ID number 1, 2, 3, ...
+INSERT INTO unique_cats2 (name, age)
+VALUES ("Sam", 10);
