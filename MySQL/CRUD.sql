@@ -48,3 +48,19 @@ Ex.
 SELECT cat_is AS id, name FROM cats;
 SELECT name AS 'cat name', breed 'kitty breed' FROM cats;
 DESC cats;
+
+-------------------------------------------------------------------------------
+
+Update
+How do we update the existing data?
+
+Ex.
+UPDATE cats SET breed='Shorthair'
+WHERE breed='Tabby';
+
+Ex.
+UPDATE cats SET age=14
+WHERE name='Misty';
+
+*** Try SELECTing before you UPDATE/DELETE to check that you Select the right data to update ***
+*** There is no undo ***
