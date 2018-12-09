@@ -13,3 +13,12 @@ Ex.
 SELECT name, age FROM cats;
 SELECT cat_id, breed, age, name FROM cats;
 
+-------------------------------------------------------------------------------
+
+WHERE --> get more specific data
+
+Ex.
+SELECT * FROM cats WHERE age=4;
+--> Only select data from cats where cat's age equals four
+
+SELECT * FROM cats WHERE name='Egg'; // case insensitive, 'EGG' will find 'Egg' as well
