@@ -76,3 +76,15 @@ Implementation:
 UPDATE cats SET name ="Jack" WHERE name="Jackson";
 UPDATE cats SET breed="British Shorthair" WHERE name="Ringo";
 UPDATE cats SET age=12 WHERE breed="Maine Coon";
+
+-------------------------------------------------------------------------------
+
+DELETE
+
+Ex.
+DELETE FROM cats WHERE name='Egg';
+
+When you delete a data the ID will not change, it stays the same, so it will skip the data that is deleted
+
+*** Try SELECTing before you UPDATE/DELETE to check that you Select the right data to update ***
+*** There is no undo ***
