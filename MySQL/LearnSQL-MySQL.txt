@@ -282,3 +282,30 @@ CREATE TABLE unique_cats2 (
 Ex.  // Automatically creating ID number 1, 2, 3, ...
 INSERT INTO unique_cats2 (name, age)
 VALUES ("Sam", 10);
+
+
+-------------------------------------------------------------------------------
+Exercise
+
+Define an Employees Table, with the following fields:
+1. id - number (automatically increments), mandatory, primary key
+2. last_name - text, mandatory
+3. first_name - text, mandatory
+4. middle_name - text, not mandatory
+5. age - number, mandatory
+6.current_status - text, mandatory, defaults to 'employed'
+
+Implementation:
+
+CREATE TABLE employees (
+    id INT NOT NULL AUTO_INCREMENT, // OR --> id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    last_name VARCHAR(50) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    middle_name VARCHAR(50),
+    age INT NOT NULL,
+    current_status VARCHAR(20) NOT NULL DEFAULT 'employed',
+    PRIMARY KEY (id)
+    );
+
+DESC employees;
+
