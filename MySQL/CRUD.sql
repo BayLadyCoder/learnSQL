@@ -38,3 +38,13 @@ SELECT cat_id FROM cats;
 SELECT name, breed FROM cats;
 SELECT name, age FROM cats WHERE breed='Tabby';
 SELECT cat_id, age FROM cats WHERE cat_id=age;
+
+-------------------------------------------------------------------------------
+ALIASES
+use AS to create new variable name of that column for the retrived data 
+only show the new name in the retrieved data, it does not change the table column header names 
+
+Ex. 
+SELECT cat_is AS id, name FROM cats;
+SELECT name AS 'cat name', breed 'kitty breed' FROM cats;
+DESC cats;
