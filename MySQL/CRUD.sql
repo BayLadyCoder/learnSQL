@@ -64,3 +64,15 @@ WHERE name='Misty';
 
 *** Try SELECTing before you UPDATE/DELETE to check that you Select the right data to update ***
 *** There is no undo ***
+
+-------------------------------------------------------------------------------
+UPDATE Exercise
+1. Change Jackson s name to Jack
+2. Change Ringo breed to "British Shorthair"
+3. Update both Main Coons ages to be 12
+
+Implementation: 
+
+UPDATE cats SET name ="Jack" WHERE name="Jackson";
+UPDATE cats SET breed="British Shorthair" WHERE name="Ringo";
+UPDATE cats SET age=12 WHERE breed="Maine Coon";
