@@ -22,3 +22,19 @@ SELECT * FROM cats WHERE age=4;
 --> Only select data from cats where cat's age equals four
 
 SELECT * FROM cats WHERE name='Egg'; // case insensitive, 'EGG' will find 'Egg' as well
+
+-------------------------------------------------------------------------------
+SELECT Challenge
+
+Write the SQL that selects the following:
+1. select cat_id of all cats
+2. select name and breed of all cats
+3. select name and age of cats who have breed Tabby
+4. select cat_id and age of cats whose cat_id and age are the same 
+
+Implementation:
+
+SELECT cat_id FROM cats;
+SELECT name, breed FROM cats;
+SELECT name, age FROM cats WHERE breed='Tabby';
+SELECT cat_id, age FROM cats WHERE cat_id=age;
