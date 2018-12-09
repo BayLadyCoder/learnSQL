@@ -246,4 +246,25 @@ CREATE TABLE cats3
 INSERT INTO cats3 (name, age)
 VALUES (NULL, 3); // Null is NOT allowed in this case, it will give an error
 
+-------------------------------------------------------------------------------
+
+PRIMARY KEY
+A Unique Identifier // cannot have duplicated value in the PRIMARY KEY
+Usually use for ID or Username
+
+Ex.
+CREATE TABLE unique_cats (
+    cat_id INT NOT NULL,
+    name VARCHAR(100),
+    age INT,
+    PRIMARY KEY (cat_id)
+);
+
+Ex.
+INSERT INTO unique_cats (cat_id, name, age)
+VALUES (1, "Lou", 8);
+
+INSERT INTO unique_cats (cat_id, name, age)
+VALUES (1, "Sam", 10); // Duplicated value for cat_id(Primary key), it will give you an error.
+
 
