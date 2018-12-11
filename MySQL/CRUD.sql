@@ -101,3 +101,40 @@ DELETE FROM cats WHERE age=4;
 DELETE FROM cats WHERE age=cat_id;
 DELETE FROM cats;
 
+-------------------------------------------------------------------------------
+
+CRUD Challenges
+
+Spring Cleaning
+The Annual Closet Inventory
+1. Create a new database "shirts_db"
+2. create a new table called "shirts"
+3. Table headers 
+> shirt_id, INT, NOT NULL, Primary Key, AUTO_INCREMENT
+> article, VARCHAR
+> color, VARCHAR
+> shirt_size, VARCHAR(1)
+> last_worn, INT
+
+Add 8 shirts as a default (code from the slide)
+
+Then, add a new shirt
+> purple polo shirt, size M, last worn 50 days ago
+
+Then, SELECT all shirts, but ONly print out Article and color
+
+Then, SELECT all MEDIUM shirts, print out EVERYTHING but shirt_id
+
+Then, UPDATE all polo shirts, change their size to L 
+
+Then, UPDATE the shirts that last worn 15 days ago, change last worn to 0
+
+Then, UPDATE all white shirts, change size to 'XS', and color to 'off white'
+
+Then, DELETE all old shirt that last worn 200 days ago
+
+Then, DELETE all tank tops
+
+Then, DELETE all shirts
+
+Then, DROP the entire shirts table

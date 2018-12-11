@@ -74,7 +74,7 @@ Draw a Tweets Table
 
 
 CREATE TABLE
-CREAT TABLE tablename
+CREATE TABLE tablename
 ( 
   column_name data_type,
   column_name data_type
