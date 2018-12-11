@@ -138,3 +138,17 @@ Then, DELETE all tank tops
 Then, DELETE all shirts
 
 Then, DROP the entire shirts table
+
+
+Implementation:
+
+CREATE DATABASE shirts_db;
+CREATE TABLE shirts (
+    shirt_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    article VARCHAR(25),
+    color VARCHAR(20),
+    shirt_size VARCHAR(1),
+    last_worn INT
+);
+
+
