@@ -178,3 +178,7 @@ WHERE last_worn = 15;
 UPDATE shirts SET color='off white', shirt_size='XS' 
 WHERE color='white'; 
 -->> 'XS' doesn't work because shirt_size was declared VARCHAR(1) not VARCHAR(2), so I changed it to 'X' in MySQL. However, everything else is fine
+
+DELETE FROM shirts WHERE last_worn = 200;
+DELETE FROM shirts WHERE article = 'tank top';
+DELETE FROM shirts;
