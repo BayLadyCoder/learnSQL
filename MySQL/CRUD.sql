@@ -165,3 +165,6 @@ INSERT INTO shirts (article, color, shirt_size, last_worn)
 VALUES ('polo shirt', 'purple', 'M', 50);
 
 
+SELECT article, color FROM shirts;
+
+SELECT article, color, shirt_size, last_worn FROM shirts WHERE shirt_size='M';
