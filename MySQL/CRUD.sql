@@ -88,3 +88,16 @@ When you delete a data the ID will not change, it stays the same, so it will ski
 
 *** Try SELECTing before you UPDATE/DELETE to check that you Select the right data to update ***
 *** There is no undo ***
+-------------------------------------------------------------------------------
+
+DELETE Challenge
+1. delete all 4 years old cats
+2. delete cats whose age is the same as thier cat_id
+3. delete all cats
+
+Implementation:
+
+DELETE FROM cats WHERE age=4;
+DELETE FROM cats WHERE age=cat_id;
+DELETE FROM cats;
+
