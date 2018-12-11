@@ -168,3 +168,13 @@ VALUES ('polo shirt', 'purple', 'M', 50);
 SELECT article, color FROM shirts;
 
 SELECT article, color, shirt_size, last_worn FROM shirts WHERE shirt_size='M';
+
+UPDATE shirts SET shirt_size = 'L'
+WHERE article = 'polo shirt';
+
+UPDATE shirts SET last_worn = 0
+WHERE last_worn = 15;
+
+UPDATE shirts SET color='off white', shirt_size='XS' 
+WHERE color='white'; 
+-->> 'XS' doesn't work because shirt_size was declared VARCHAR(1) not VARCHAR(2), so I changed it to 'X' in MySQL. However, everything else is fine
