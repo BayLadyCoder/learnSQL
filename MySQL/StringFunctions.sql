@@ -51,3 +51,16 @@ SELECT
     CONCAT (author_fname, ' ', author_lname) AS full1, 
     CONCAT (author_fname, ', ', author_lname) AS full2 
 FROM books;
+
+--------------------------------------------------------------------
+
+CONCAT with Separator 
+CONCAT_WS
+-- automatically add the separator between the variables that we want to CONCAT
+
+Ex. 
+SELECT
+CONCAT_WS('-', title, author_fname, author_lname)
+FROM books;
+
+result: title-author_fname-author_lname
