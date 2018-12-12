@@ -64,3 +64,43 @@ CONCAT_WS('-', title, author_fname, author_lname)
 FROM books;
 
 result: title-author_fname-author_lname
+
+--------------------------------------------------------------------
+SUBSTRING
+workig with parts of string
+
+*** in SQL the index starts with 1 (not zero like programming languages)
+
+--> If SUBSTRING doesn't work, use SUBSTR instead
+
+Case: 1 - String with two more arguments
+SELECT SUBSTRING('String', startingIndexInt, length)
+SELECT SUBSTR('String', startingIndexInt, length)
+Ex.
+SELECT SUBSTRING('Hello World', 1, 4);  --> Result: 'Hell'
+SELECT SUBSTR('Hello World', 1, 4);  --> Result: 'Hell'
+
+case: 2 - String with one argument (positive integer)
+SELECT SUBSTRING('String', startFromThisIndexToTheEndOfTheString)
+SELECT SUBSTR('String', startFromThisIndexToTheEndOfTheString)
+Ex.
+SELECT SUBSTRING('Hello World', 7);  --> Result: 'World'
+SELECT SUBSTR('Hello World', 7);  --> Result: 'World'
+
+case: 3 - String with one argument (negative integer)
+SELECT SUBSTRING('Hello World', numberOfIndexCountingFromTheEndOfTheStringNegativeInt)
+SELECT SUBSTR('Hello World', numberOfIndexCountingFromTheEndOfTheStringNegativeInt)
+Ex. 
+SELECT SUBSTRING('Hello World', -3); --> Result: 'rld'
+SELECT SUBSTR('Hello World', -3); --> Result: 'rld'
+
+case: 4 - String that contain '' or ""
+Ex.
+SELECT SUBSTR('I'm a cat', 3); --> it will give an error since we have a ' inside the ''
+Solution: SUBSTR("I'm a cat", 3);
+
+case: 5 - variableString
+Ex.
+SELECT SUBSTR(title, 1, 10) FROM books;
+Ex.
+SELECT SUBSTR(title, 1, 10) as 'short title' FROM books;
