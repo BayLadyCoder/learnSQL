@@ -137,3 +137,35 @@ The Namesa...                         |
 | Consider t... 
 */
 
+
+--------------------------------------------------------------------
+REPLACE
+replace parts of string 
+
+Format
+SELECT REPLACE('String', 'partThatWantToBeReplace', 'ReplaceItWithThisString');
+
+Ex.
+SELECT REPLACE('Hello World', 'Hell', '1234');
+Result:
+'1234o World'
+
+Ex.
+SELECT REPLACE('Hello World', 'l', '7');
+Result:
+'He77o Wor7d'
+
+Ex.
+SELECT REPLACE('cheese bread coffee milk', ' ', ' and ');
+Result:
+'cheese and bread and coffee and milk'
+
+Ex.
+SELECT REPLACE(title, 'e', '3') FROM books;
+Result:
+/*
+ Th3 Nam3sak3                                        |
+| Nors3 Mythology                                     |
+| Am3rican Gods                                       |
+| Int3rpr3t3r of Maladi3s   
+*/
