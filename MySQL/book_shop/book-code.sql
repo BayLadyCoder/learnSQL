@@ -14,8 +14,16 @@
 
 
 
+-- SELECT
+--     CONCAT (
+--         author_lname, " is ", CHAR_LENGTH(author_lname), " characters long"
+--     ) as 'lastname length'
+-- FROM books;
+
+
+
 SELECT
     CONCAT (
-        author_lname, " is ", CHAR_LENGTH(author_lname), " characters long"
-    ) as 'lastname length'
+        'MY FAVORITE BOOK IS THE ', UPPER(title)
+    )
 FROM books;

@@ -437,3 +437,38 @@ Result:
 | CONSIDER THE LOBSTER                                |
 +-----------------------------------------------------+
 */
+
+--------------------------------------------------------------------
+combine UPPER() with CONCAT
+
+Ex.
+SELECT
+    CONCAT (
+        'MY FAVORITE BOOK IS ', UPPER(title)
+    )
+    AS "MY FAVORITE BOOK"
+FROM books;
+
+Result:
+/*
++-------------------------------------------------------------------------+
+| MY FAVORITE BOOK                                                        |
++-------------------------------------------------------------------------+
+| MY FAVORITE BOOK IS THE NAMESAKE                                        |
+| MY FAVORITE BOOK IS NORSE MYTHOLOGY                                     |
+| MY FAVORITE BOOK IS AMERICAN GODS                                       |
+| MY FAVORITE BOOK IS INTERPRETER OF MALADIES                             |
+| MY FAVORITE BOOK IS A HOLOGRAM FOR THE KING: A NOVEL                    |
+| MY FAVORITE BOOK IS THE CIRCLE                                          |
+| MY FAVORITE BOOK IS THE AMAZING ADVENTURES OF KAVALIER & CLAY           |
+| MY FAVORITE BOOK IS JUST KIDS                                           |
+| MY FAVORITE BOOK IS A HEARTBREAKING WORK OF STAGGERING GENIUS           |
+| MY FAVORITE BOOK IS CORALINE                                            |
+| MY FAVORITE BOOK IS WHAT WE TALK ABOUT WHEN WE TALK ABOUT LOVE: STORIES |
+| MY FAVORITE BOOK IS WHERE I'M CALLING FROM: SELECTED STORIES            |
+| MY FAVORITE BOOK IS WHITE NOISE                                         |
+| MY FAVORITE BOOK IS CANNERY ROW                                         |
+| MY FAVORITE BOOK IS OBLIVION: STORIES                                   |
+| MY FAVORITE BOOK IS CONSIDER THE LOBSTER                                |
++-------------------------------------------------------------------------+
+*/
