@@ -223,3 +223,50 @@ Result:
 | Consid3r t   |
 +--------------+
 */
+
+--------------------------------------------------------------------
+REVERSE
+reverse string
+
+Format
+SELECT REVERSE('String that we want to reverse');
+
+Ex.
+SELECT REVERSE('Hello World');
+
+Result:
+/*
++------------------------+
+| REVERSE('Hello World') |
++------------------------+
+| dlroW olleH            |
++------------------------+
+*/
+
+Ex.
+SELECT REVERSE(author_fname) FROM books;
+
+Result:
+/*
++-----------------------+
+| REVERSE(author_fname) |
++-----------------------+
+| apmuhJ                |
+| lieN                  |
+| lieN                  |
+| apmuhJ                |
+| evaD                  |
+| evaD                  |
+| leahciM               |
+| ittaP                 |
+| evaD                  |
+| lieN                  |
+| dnomyaR               |
+| dnomyaR               |
+| noD                   |
+| nhoJ                  |
+| divaD                 |
+| divaD                 |
++-----------------------+
+*/
+--------------------------------------------------------------------
