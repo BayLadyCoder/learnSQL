@@ -119,22 +119,26 @@ FROM books;
 
 Result:
 /*
-The Namesa...                         |
-| Norse Myth...                         |
-| American G...                         |
-| Interprete...                         |
-| A Hologram...                         |
-| The Circle...                         |
-| The Amazin...                         |
-| Just Kids...                          |
-| A Heartbre...                         |
-| Coraline...                           |
-| What We Ta...                         |
-| Where I'm ...                         |
-| White Nois...                         |
-| Cannery Ro...                         |
-| Oblivion: ...                         |
-| Consider t... 
++---------------+
+| short title   |
++---------------+
+| The Namesa... |
+| Norse Myth... |
+| American G... |
+| Interprete... |
+| A Hologram... |
+| The Circle... |
+| The Amazin... |
+| Just Kids...  |
+| A Heartbre... |
+| Coraline...   |
+| What We Ta... |
+| Where I'm ... |
+| White Nois... |
+| Cannery Ro... |
+| Oblivion: ... |
+| Consider t... |
++---------------+
 */
 
 
@@ -164,8 +168,58 @@ Ex.
 SELECT REPLACE(title, 'e', '3') FROM books;
 Result:
 /*
- Th3 Nam3sak3                                        |
++-----------------------------------------------------+
+| REPLACE(title, 'e', '3')                            |
++-----------------------------------------------------+
+| Th3 Nam3sak3                                        |
 | Nors3 Mythology                                     |
 | Am3rican Gods                                       |
-| Int3rpr3t3r of Maladi3s   
+| Int3rpr3t3r of Maladi3s                             |
+| A Hologram for th3 King: A Nov3l                    |
+| Th3 Circl3                                          |
+| Th3 Amazing Adv3ntur3s of Kavali3r & Clay           |
+| Just Kids                                           |
+| A H3artbr3aking Work of Stagg3ring G3nius           |
+| Coralin3                                            |
+| What W3 Talk About Wh3n W3 Talk About Lov3: Stori3s |
+| Wh3r3 I'm Calling From: S3l3ct3d Stori3s            |
+| Whit3 Nois3                                         |
+| Cann3ry Row                                         |
+| Oblivion: Stori3s                                   |
+| Consid3r th3 Lobst3r                                |
++-----------------------------------------------------+  
+*/
+
+
+--------------------------------------------------------------------
+combine REPLACE with SUBSTRING
+
+Ex.
+SELECT
+    SUBSTRING(REPLACE(title, 'e', '3'), 1, 10)
+    AS 'weird string'
+FROM books;
+
+Result:
+/*
++--------------+
+| weird string |
++--------------+
+| Th3 Nam3sa   |
+| Nors3 Myth   |
+| Am3rican G   |
+| Int3rpr3t3   |
+| A Hologram   |
+| Th3 Circl3   |
+| Th3 Amazin   |
+| Just Kids    |
+| A H3artbr3   |
+| Coralin3     |
+| What W3 Ta   |
+| Wh3r3 I'm    |
+| Whit3 Nois   |
+| Cann3ry Ro   |
+| Oblivion:    |
+| Consid3r t   |
++--------------+
 */
