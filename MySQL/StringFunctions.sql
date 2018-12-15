@@ -385,3 +385,55 @@ result:
 | Foster Wallace is 14 characters long |
 +--------------------------------------+
 */
+
+--------------------------------------------------------------------
+UPPER() and LOWER()
+change a String case (to upper case or to lower case)
+
+Ex.
+SELECT UPPER('Hello World');
+Result:
+/*
++----------------------+
+| UPPER('Hello World') |
++----------------------+
+| HELLO WORLD          |
++----------------------+
+*/
+
+Ex.
+SELECT LOWER('Hello World');
+Result:
+/*
++----------------------+
+| LOWER('Hello World') |
++----------------------+
+| hello world          |
++----------------------+
+*/
+
+Ex.
+SELECT UPPER(title) FROM books;
+Result:
+/*
++-----------------------------------------------------+
+| UPPER(title)                                        |
++-----------------------------------------------------+
+| THE NAMESAKE                                        |
+| NORSE MYTHOLOGY                                     |
+| AMERICAN GODS                                       |
+| INTERPRETER OF MALADIES                             |
+| A HOLOGRAM FOR THE KING: A NOVEL                    |
+| THE CIRCLE                                          |
+| THE AMAZING ADVENTURES OF KAVALIER & CLAY           |
+| JUST KIDS                                           |
+| A HEARTBREAKING WORK OF STAGGERING GENIUS           |
+| CORALINE                                            |
+| WHAT WE TALK ABOUT WHEN WE TALK ABOUT LOVE: STORIES |
+| WHERE I'M CALLING FROM: SELECTED STORIES            |
+| WHITE NOISE                                         |
+| CANNERY ROW                                         |
+| OBLIVION: STORIES                                   |
+| CONSIDER THE LOBSTER                                |
++-----------------------------------------------------+
+*/
