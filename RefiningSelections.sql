@@ -85,3 +85,66 @@ Result:
 | George       | Saunders       |
 +--------------+----------------+
 */
+
+--------------------------------------------------------------------
+ORDER BY
+sorting our results (ASCENDING by default)
+
+Alphabetical order
+Ex.
+SELECT author_lname FROM books ORDER BY author_lname;
+Result:
+/*
++----------------+
+| author_lname   |
++----------------+
+| Carver         |
+| Carver         |
+| Chabon         |
+| DeLillo        |
+| Eggers         |
+| Eggers         |
+| Eggers         |
+| Foster Wallace |
+| Foster Wallace |
+| Gaiman         |
+| Gaiman         |
+| Gaiman         |
+| Harris         |
+| Harris         |
+| Lahiri         |
+| Lahiri         |
+| Saunders       |
+| Smith          |
+| Steinbeck      |
++----------------+
+*/
+
+Ex.
+SELECT title FROM books ORDER BY title;
+Result:
+/*
++-----------------------------------------------------+
+| title                                               |
++-----------------------------------------------------+
+| 10% Happier                                         |
+| A Heartbreaking Work of Staggering Genius           |
+| A Hologram for the King: A Novel                    |
+| American Gods                                       |
+| Cannery Row                                         |
+| Consider the Lobster                                |
+| Coraline                                            |
+| fake_book                                           |
+| Interpreter of Maladies                             |
+| Just Kids                                           |
+| Lincoln In The Bardo                                |
+| Norse Mythology                                     |
+| Oblivion: Stories                                   |
+| The Amazing Adventures of Kavalier & Clay           |
+| The Circle                                          |
+| The Namesake                                        |
+| What We Talk About When We Talk About Love: Stories |
+| Where I'm Calling From: Selected Stories            |
+| White Noise                                         |
++-----------------------------------------------------+
+*/
