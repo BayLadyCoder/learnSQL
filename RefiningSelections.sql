@@ -148,3 +148,95 @@ Result:
 | White Noise                                         |
 +-----------------------------------------------------+
 */
+
+--------------------------------------------------------------------
+ORDER BY 
+Descending (DESC)
+
+Ex.
+SELECT author_lname FROM books ORDER BY author_lname DESC;
+Result:
+/*
++----------------+
+| author_lname   |
++----------------+
+| Steinbeck      |
+| Smith          |
+| Saunders       |
+| Lahiri         |
+| Lahiri         |
+| Harris         |
+| Harris         |
+| Gaiman         |
+| Gaiman         |
+| Gaiman         |
+| Foster Wallace |
+| Foster Wallace |
+| Eggers         |
+| Eggers         |
+| Eggers         |
+| DeLillo        |
+| Chabon         |
+| Carver         |
+| Carver         |
++----------------+
+*/
+
+Ex.
+SELECT released_year FROM books ORDER BY released_year DESC;
+Result:
+/*
++---------------+
+| released_year |
++---------------+
+|          2017 |
+|          2016 |
+|          2014 |
+|          2013 |
+|          2012 |
+|          2010 |
+|          2005 |
+|          2004 |
+|          2003 |
+|          2003 |
+|          2001 |
+|          2001 |
+|          2001 |
+|          2000 |
+|          1996 |
+|          1989 |
+|          1985 |
+|          1981 |
+|          1945 |
++---------------+
+*/
+
+Ex.
+SELECT title, pages, released_year FROM books 
+ORDER BY released_year DESC;
+Result:
+/*
++-----------------------------------------------------+-------+---------------+
+| title                                               | pages | released_year |
++-----------------------------------------------------+-------+---------------+
+| Lincoln In The Bardo                                |   367 |          2017 |
+| Norse Mythology                                     |   304 |          2016 |
+| 10% Happier                                         |   256 |          2014 |
+| The Circle                                          |   504 |          2013 |
+| A Hologram for the King: A Novel                    |   352 |          2012 |
+| Just Kids                                           |   304 |          2010 |
+| Consider the Lobster                                |   343 |          2005 |
+| Oblivion: Stories                                   |   329 |          2004 |
+| The Namesake                                        |   291 |          2003 |
+| Coraline                                            |   208 |          2003 |
+| American Gods                                       |   465 |          2001 |
+| A Heartbreaking Work of Staggering Genius           |   437 |          2001 |
+| fake_book                                           |   428 |          2001 |
+| The Amazing Adventures of Kavalier & Clay           |   634 |          2000 |
+| Interpreter of Maladies                             |   198 |          1996 |
+| Where I'm Calling From: Selected Stories            |   526 |          1989 |
+| White Noise                                         |   320 |          1985 |
+| What We Talk About When We Talk About Love: Stories |   176 |          1981 |
+| Cannery Row                                         |   181 |          1945 |
++-----------------------------------------------------+-------+---------------+
+*/
