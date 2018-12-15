@@ -30,3 +30,58 @@ Result:
 | Saunders       |
 +----------------+
 */
+
+--------------------------------------------------------------------
+combine DISTINCT with CONCAT
+
+Ex.
+SELECT
+    DISTINCT
+        CONCAT(author_fname, ' ' , author_lname)
+     AS 'full name'
+FROM books;
+Result:
+/*
++----------------------+
+| full name            |
++----------------------+
+| Jhumpa Lahiri        |
+| Neil Gaiman          |
+| Dave Eggers          |
+| Michael Chabon       |
+| Patti Smith          |
+| Raymond Carver       |
+| Don DeLillo          |
+| John Steinbeck       |
+| David Foster Wallace |
+| Dan Harris           |
+| Freida Harris        |
+| George Saunders      |
++----------------------+
+*/
+
+This one will distinct both columns same as above
+Dont need to be concatinated before distinct.
+Ex.
+SELECT
+    DISTINCT author_fname, author_lname
+FROM books;
+Result:
+/*
++--------------+----------------+
+| author_fname | author_lname   |
++--------------+----------------+
+| Jhumpa       | Lahiri         |
+| Neil         | Gaiman         |
+| Dave         | Eggers         |
+| Michael      | Chabon         |
+| Patti        | Smith          |
+| Raymond      | Carver         |
+| Don          | DeLillo        |
+| John         | Steinbeck      |
+| David        | Foster Wallace |
+| Dan          | Harris         |
+| Freida       | Harris         |
+| George       | Saunders       |
++--------------+----------------+
+*/
