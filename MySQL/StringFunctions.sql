@@ -104,3 +104,36 @@ Ex.
 SELECT SUBSTR(title, 1, 10) FROM books;
 Ex.
 SELECT SUBSTR(title, 1, 10) as 'short title' FROM books;
+
+--------------------------------------------------------------------
+combine SUBSTRING with CONCAT
+
+--> SELECT SUBSTRING title index 1-10 and CONCAT '...' after each title.
+Ex.
+SELECT
+    CONCAT (
+        SUBSTRING(title, 1, 10),
+        '...'
+    ) AS 'short title'
+FROM books;
+
+Result:
+/*
+The Namesa...                         |
+| Norse Myth...                         |
+| American G...                         |
+| Interprete...                         |
+| A Hologram...                         |
+| The Circle...                         |
+| The Amazin...                         |
+| Just Kids...                          |
+| A Heartbre...                         |
+| Coraline...                           |
+| What We Ta...                         |
+| Where I'm ...                         |
+| White Nois...                         |
+| Cannery Ro...                         |
+| Oblivion: ...                         |
+| Consider t... 
+*/
+
