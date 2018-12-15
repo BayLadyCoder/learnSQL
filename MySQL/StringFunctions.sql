@@ -503,3 +503,19 @@ Result:
 | MY FAVORITE BOOK IS consider the lobster                                |
 +-------------------------------------------------------------------------+
 */
+
+NOTES 
+
+This WORKS:
+SELECT UPPER(CONCAT(author_fname, ' ', author_lname)) AS "full name in caps"
+FROM books;
+
+While this DOES NOT:
+SELECT CONCAT(UPPER(author_fname, ' ', author_lname)) AS "full name in caps" 
+FROM books;
+
+*** 
+important: UPPER only takes one argument 
+and CONCAT takes two or more arguments, 
+so they can not be switched in that way. 
+***
