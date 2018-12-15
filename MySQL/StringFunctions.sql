@@ -504,6 +504,8 @@ Result:
 +-------------------------------------------------------------------------+
 */
 
+--------------------------------------------------------------------
+
 NOTES 
 
 This WORKS:
@@ -519,3 +521,6 @@ important: UPPER only takes one argument
 and CONCAT takes two or more arguments, 
 so they can not be switched in that way. 
 ***
+
+--------------------------------------------------------------------
+
