@@ -270,3 +270,43 @@ Result:
 +-----------------------+
 */
 --------------------------------------------------------------------
+combine REVERSE with CONCAT
+
+Ex.
+SELECT CONCAT('woof', REVERSE('woof'));
+result:
+/*
++---------------------------------+
+| CONCAT('woof', REVERSE('woof')) |
++---------------------------------+
+| wooffoow                        |
++---------------------------------+
+*/
+
+Ex.
+SELECT CONCAT(author_fname, REVERSE(author_fname)) FROM books;
+result:
+/*
++---------------------------------------------+
+| CONCAT(author_fname, REVERSE(author_fname)) |
++---------------------------------------------+
+| JhumpaapmuhJ                                |
+| NeillieN                                    |
+| NeillieN                                    |
+| JhumpaapmuhJ                                |
+| DaveevaD                                    |
+| DaveevaD                                    |
+| MichaelleahciM                              |
+| PattiittaP                                  |
+| DaveevaD                                    |
+| NeillieN                                    |
+| RaymonddnomyaR                              |
+| RaymonddnomyaR                              |
+| DonnoD                                      |
+| JohnnhoJ                                    |
+| DaviddivaD                                  |
+| DaviddivaD                                  |
++---------------------------------------------+
+
+*/
+
