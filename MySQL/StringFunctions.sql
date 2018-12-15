@@ -351,3 +351,37 @@ REsult:
 +----------------+--------+
 
 */
+
+--------------------------------------------------------------------
+combine CHAR_LENGTH with CONCAT
+
+Ex.
+SELECT
+    CONCAT (
+        author_lname, " is ", CHAR_LENGTH(author_lname), " characters long"
+    ) as 'lastname length'
+FROM books;
+
+result:
+/*
++--------------------------------------+
+| lastname length                      |
++--------------------------------------+
+| Lahiri is 6 characters long          |
+| Gaiman is 6 characters long          |
+| Gaiman is 6 characters long          |
+| Lahiri is 6 characters long          |
+| Eggers is 6 characters long          |
+| Eggers is 6 characters long          |
+| Chabon is 6 characters long          |
+| Smith is 5 characters long           |
+| Eggers is 6 characters long          |
+| Gaiman is 6 characters long          |
+| Carver is 6 characters long          |
+| Carver is 6 characters long          |
+| DeLillo is 7 characters long         |
+| Steinbeck is 9 characters long       |
+| Foster Wallace is 14 characters long |
+| Foster Wallace is 14 characters long |
++--------------------------------------+
+*/
