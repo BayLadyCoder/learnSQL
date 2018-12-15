@@ -310,3 +310,44 @@ result:
 
 */
 
+--------------------------------------------------------------------
+CHAR_LENGTH
+count characters in String
+
+Ex.
+SELECT CHAR_LENGTH('Hello World');
+result:
+/*
++----------------------------+
+| CHAR_LENGTH('Hello World') |
++----------------------------+
+|                         11 |
++----------------------------+
+*/
+
+Ex.
+SELECT author_lname, CHAR_LENGTH(author_lname) AS length FROM books;
+REsult:
+/*
++----------------+--------+
+| author_lname   | length |
++----------------+--------+
+| Lahiri         |      6 |
+| Gaiman         |      6 |
+| Gaiman         |      6 |
+| Lahiri         |      6 |
+| Eggers         |      6 |
+| Eggers         |      6 |
+| Chabon         |      6 |
+| Smith          |      5 |
+| Eggers         |      6 |
+| Gaiman         |      6 |
+| Carver         |      6 |
+| Carver         |      6 |
+| DeLillo        |      7 |
+| Steinbeck      |      9 |
+| Foster Wallace |     14 |
+| Foster Wallace |     14 |
++----------------+--------+
+
+*/
