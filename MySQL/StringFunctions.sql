@@ -472,3 +472,34 @@ Result:
 | MY FAVORITE BOOK IS CONSIDER THE LOBSTER                                |
 +-------------------------------------------------------------------------+
 */
+
+Ex.
+SELECT
+    CONCAT (
+        'MY FAVORITE BOOK IS ', LOWER(title)
+    )
+    AS "MY FAVORITE BOOK"
+FROM books;
+Result:
+/*
++-------------------------------------------------------------------------+
+| MY FAVORITE BOOK                                                        |
++-------------------------------------------------------------------------+
+| MY FAVORITE BOOK IS the namesake                                        |
+| MY FAVORITE BOOK IS norse mythology                                     |
+| MY FAVORITE BOOK IS american gods                                       |
+| MY FAVORITE BOOK IS interpreter of maladies                             |
+| MY FAVORITE BOOK IS a hologram for the king: a novel                    |
+| MY FAVORITE BOOK IS the circle                                          |
+| MY FAVORITE BOOK IS the amazing adventures of kavalier & clay           |
+| MY FAVORITE BOOK IS just kids                                           |
+| MY FAVORITE BOOK IS a heartbreaking work of staggering genius           |
+| MY FAVORITE BOOK IS coraline                                            |
+| MY FAVORITE BOOK IS what we talk about when we talk about love: stories |
+| MY FAVORITE BOOK IS where i'm calling from: selected stories            |
+| MY FAVORITE BOOK IS white noise                                         |
+| MY FAVORITE BOOK IS cannery row                                         |
+| MY FAVORITE BOOK IS oblivion: stories                                   |
+| MY FAVORITE BOOK IS consider the lobster                                |
++-------------------------------------------------------------------------+
+*/
