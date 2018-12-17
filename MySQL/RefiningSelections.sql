@@ -538,3 +538,31 @@ Result:
 Example:
 Looking for phone numbers in this format (235)234-0987
 LIKE '(___)___-____ %';
+
+
+--------------------------------------------------------------------
+Like - \% \_
+
+Searching for a book title that contains %
+Ex.
+SELECT title FROM books WHERE title LIKE '%\%%';
+Result:
+/*
++-------------+
+| title       |
++-------------+
+| 10% Happier |
++-------------+
+*/
+
+Searching for a book title that contains _
+Ex.
+SELECT title FROM books WHERE title LIKE '%\_%';
+Result:
+/*
++-----------+
+| title     |
++-----------+
+| fake_book |
++-----------+
+*/
