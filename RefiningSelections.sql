@@ -240,3 +240,72 @@ Result:
 | Cannery Row                                         |   181 |          1945 |
 +-----------------------------------------------------+-------+---------------+
 */
+
+
+--------------------------------------------------------------------
+ORDER BY (number)
+
+Ex.
+SELECT title, author_fname, author_lname
+FROM books ORDER BY 2;
+--> ORDER BY 2 means order by the second variable from the selected list
+--> In this case, it means "author_fname"
+Result:
+/*
++-----------------------------------------------------+--------------+----------------+
+| title                                               | author_fname | author_lname   |
++-----------------------------------------------------+--------------+----------------+
+| 10% Happier                                         | Dan          | Harris         |
+| A Hologram for the King: A Novel                    | Dave         | Eggers         |
+| The Circle                                          | Dave         | Eggers         |
+| A Heartbreaking Work of Staggering Genius           | Dave         | Eggers         |
+| Oblivion: Stories                                   | David        | Foster Wallace |
+| Consider the Lobster                                | David        | Foster Wallace |
+| White Noise                                         | Don          | DeLillo        |
+| fake_book                                           | Freida       | Harris         |
+| Lincoln In The Bardo                                | George       | Saunders       |
+| The Namesake                                        | Jhumpa       | Lahiri         |
+| Interpreter of Maladies                             | Jhumpa       | Lahiri         |
+| Cannery Row                                         | John         | Steinbeck      |
+| The Amazing Adventures of Kavalier & Clay           | Michael      | Chabon         |
+| Norse Mythology                                     | Neil         | Gaiman         |
+| American Gods                                       | Neil         | Gaiman         |
+| Coraline                                            | Neil         | Gaiman         |
+| Just Kids                                           | Patti        | Smith          |
+| What We Talk About When We Talk About Love: Stories | Raymond      | Carver         |
+| Where I'm Calling From: Selected Stories            | Raymond      | Carver         |
++-----------------------------------------------------+--------------+----------------+
+*/
+
+
+Ex.
+SELECT title, author_fname, released_year
+FROM books ORDER BY 3;
+--> order by released_year
+Result:
+/*
++-----------------------------------------------------+--------------+---------------+
+| title                                               | author_fname | released_year |
++-----------------------------------------------------+--------------+---------------+
+| Cannery Row                                         | John         |          1945 |
+| What We Talk About When We Talk About Love: Stories | Raymond      |          1981 |
+| White Noise                                         | Don          |          1985 |
+| Where I'm Calling From: Selected Stories            | Raymond      |          1989 |
+| Interpreter of Maladies                             | Jhumpa       |          1996 |
+| The Amazing Adventures of Kavalier & Clay           | Michael      |          2000 |
+| American Gods                                       | Neil         |          2001 |
+| A Heartbreaking Work of Staggering Genius           | Dave         |          2001 |
+| fake_book                                           | Freida       |          2001 |
+| The Namesake                                        | Jhumpa       |          2003 |
+| Coraline                                            | Neil         |          2003 |
+| Oblivion: Stories                                   | David        |          2004 |
+| Consider the Lobster                                | David        |          2005 |
+| Just Kids                                           | Patti        |          2010 |
+| A Hologram for the King: A Novel                    | Dave         |          2012 |
+| The Circle                                          | Dave         |          2013 |
+| 10% Happier                                         | Dan          |          2014 |
+| Norse Mythology                                     | Neil         |          2016 |
+| Lincoln In The Bardo                                | George       |          2017 |
++-----------------------------------------------------+--------------+---------------+
+
+*/
