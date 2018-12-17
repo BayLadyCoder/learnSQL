@@ -344,3 +344,22 @@ Result:
 | John         | Steinbeck      |
 +--------------+----------------+
 */
+--------------------------------------------------------------------
+LIMIT
+set the limit of the selected results
+
+Ex. --> Five most recent released books
+SELECT title, released_year FROM books
+ORDER BY  released_year DESC LIMIT 5;
+Result:
+/*
++----------------------------------+---------------+
+| title                            | released_year |
++----------------------------------+---------------+
+| Lincoln In The Bardo             |          2017 |
+| Norse Mythology                  |          2016 |
+| 10% Happier                      |          2014 |
+| The Circle                       |          2013 |
+| A Hologram for the King: A Novel |          2012 |
++----------------------------------+---------------+
+*/
