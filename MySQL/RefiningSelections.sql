@@ -307,5 +307,40 @@ Result:
 | Norse Mythology                                     | Neil         |          2016 |
 | Lincoln In The Bardo                                | George       |          2017 |
 +-----------------------------------------------------+--------------+---------------+
+*/
 
+--------------------------------------------------------------------
+ORDER BY priority1, priority2
+--> This command will ORDER BY the first priority first, 
+--> then if the first priority values are duplicated
+--> it will ORDER BY the second priority
+
+Ex.
+SELECT author_fname, author_lname FROM books
+ORDER BY author_lname, author_fname;
+Result:
+/*
++--------------+----------------+
+| author_fname | author_lname   |
++--------------+----------------+
+| Raymond      | Carver         |
+| Raymond      | Carver         |
+| Michael      | Chabon         |
+| Don          | DeLillo        |
+| Dave         | Eggers         |
+| Dave         | Eggers         |
+| Dave         | Eggers         |
+| David        | Foster Wallace |
+| David        | Foster Wallace |
+| Neil         | Gaiman         |
+| Neil         | Gaiman         |
+| Neil         | Gaiman         |
+| Dan          | Harris         |***** Dan comes before Freida
+| Freida       | Harris         |***** when they have the same last name
+| Jhumpa       | Lahiri         |
+| Jhumpa       | Lahiri         |
+| George       | Saunders       |
+| Patti        | Smith          |
+| John         | Steinbeck      |
++--------------+----------------+
 */
