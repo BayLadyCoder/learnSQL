@@ -363,3 +363,71 @@ Result:
 | A Hologram for the King: A Novel |          2012 |
 +----------------------------------+---------------+
 */
+
+--------------------------------------------------------------------
+LIMIT with two arguments
+first argument = the starting row''s index (starts at 0)
+second argument = the amount of rows from the starting row
+
+Ex.
+SELECT title, released_year FROM books
+ORDER BY released_year DESC LIMIT 0, 5;
+--> Top five most recent released books
+Result:
+/*
++----------------------------------+---------------+
+| title                            | released_year |
++----------------------------------+---------------+
+| Lincoln In The Bardo             |          2017 |
+| Norse Mythology                  |          2016 |
+| 10% Happier                      |          2014 |
+| The Circle                       |          2013 |
+| A Hologram for the King: A Novel |          2012 |
++----------------------------------+---------------+
+*/
+
+Ex.
+SELECT title, released_year FROM books
+ORDER BY released_year DESC LIMIT 5, 10;
+--> starts at the 6th book to the 10th book
+Result:
+/*
++-------------------------------------------+---------------+
+| title                                     | released_year |
++-------------------------------------------+---------------+
+| Just Kids                                 |          2010 |
+| Consider the Lobster                      |          2005 |
+| Oblivion: Stories                         |          2004 |
+| The Namesake                              |          2003 |
+| Coraline                                  |          2003 |
+| American Gods                             |          2001 |
+| A Heartbreaking Work of Staggering Genius |          2001 |
+| fake_book                                 |          2001 |
+| The Amazing Adventures of Kavalier & Clay |          2000 |
+| Interpreter of Maladies                   |          1996 |
++-------------------------------------------+---------------+
+*/
+
+Ex.
+SELECT title, released_year FROM books
+ORDER BY released_year DESC LIMIT 8, 100002154687894456;
+--> to select the starting row index and select all of the rest rows
+--> by using very big number (certainly sure that bigger than rows in the database)
+Result:
+/*
++-----------------------------------------------------+---------------+
+| title                                               | released_year |
++-----------------------------------------------------+---------------+
+| The Namesake                                        |          2003 |
+| Coraline                                            |          2003 |
+| American Gods                                       |          2001 |
+| A Heartbreaking Work of Staggering Genius           |          2001 |
+| fake_book                                           |          2001 |
+| The Amazing Adventures of Kavalier & Clay           |          2000 |
+| Interpreter of Maladies                             |          1996 |
+| Where I'm Calling From: Selected Stories            |          1989 |
+| White Noise                                         |          1985 |
+| What We Talk About When We Talk About Love: Stories |          1981 |
+| Cannery Row                                         |          1945 |
++-----------------------------------------------------+---------------+
+*/
