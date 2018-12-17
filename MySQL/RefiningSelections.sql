@@ -431,3 +431,60 @@ Result:
 | Cannery Row                                         |          1945 |
 +-----------------------------------------------------+---------------+
 */
+
+--------------------------------------------------------------------
+LIKE (with '%')
+searching in a better way
+% = any character, any length
+
+Ex.
+SELECT title, author_fname FROM books 
+WHERE author_fname LIKE '%da%';
+Result:
+/*
++-------------------------------------------+--------------+
+| title                                     | author_fname |
++-------------------------------------------+--------------+
+| A Hologram for the King: A Novel          | Dave         |
+| The Circle                                | Dave         |
+| A Heartbreaking Work of Staggering Genius | Dave         |
+| Oblivion: Stories                         | David        |
+| Consider the Lobster                      | David        |
+| 10% Happier                               | Dan          |
+| fake_book                                 | Freida       |****
++-------------------------------------------+--------------+
+*/
+
+Ex.
+SELECT title, author_fname FROM books 
+WHERE author_fname LIKE 'da%';
+Result:
+/*
++-------------------------------------------+--------------+
+| title                                     | author_fname |
++-------------------------------------------+--------------+
+| A Hologram for the King: A Novel          | Dave         |
+| The Circle                                | Dave         |
+| A Heartbreaking Work of Staggering Genius | Dave         |
+| Oblivion: Stories                         | David        |
+| Consider the Lobster                      | David        |
+| 10% Happier                               | Dan          |
++-------------------------------------------+--------------+
+*/
+
+Ex.
+SELECT title FROM books 
+WHERE title LIKE '%the%';
+Result:
+/*
++-------------------------------------------+
+| title                                     |
++-------------------------------------------+
+| The Namesake                              |
+| A Hologram for the King: A Novel          |
+| The Circle                                |
+| The Amazing Adventures of Kavalier & Clay |
+| Consider the Lobster                      |
+| Lincoln In The Bardo                      |
++-------------------------------------------+
+*/
