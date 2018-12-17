@@ -437,6 +437,7 @@ LIKE (with '%')
 searching in a better way
 % = any character, any length
 
+
 Ex.
 SELECT title, author_fname FROM books 
 WHERE author_fname LIKE '%da%';
@@ -488,3 +489,52 @@ Result:
 | Lincoln In The Bardo                      |
 +-------------------------------------------+
 */
+
+
+--------------------------------------------------------------------
+LIKE (with '_')
+_ = exactly one character, any character
+
+Ex.
+SELECT title, stock_quantity FROM books
+WHERE stock_quantity LIKE '__';
+Result:
+/*
++-----------------------------------------------------+----------------+
+| title                                               | stock_quantity |
++-----------------------------------------------------+----------------+
+| The Namesake                                        |             32 |
+| Norse Mythology                                     |             43 |
+| American Gods                                       |             12 |
+| Interpreter of Maladies                             |             97 |
+| The Circle                                          |             26 |
+| The Amazing Adventures of Kavalier & Clay           |             68 |
+| Just Kids                                           |             55 |
+| What We Talk About When We Talk About Love: Stories |             23 |
+| Where I'm Calling From: Selected Stories            |             12 |
+| White Noise                                         |             49 |
+| Cannery Row                                         |             95 |
+| Consider the Lobster                                |             92 |
+| 10% Happier                                         |             29 |
++-----------------------------------------------------+----------------+
+*/
+
+Ex. -- three underscores
+SELECT title, stock_quantity FROM books
+WHERE stock_quantity LIKE '___'; 
+Result:
+/*
++-------------------------------------------+----------------+
+| title                                     | stock_quantity |
++-------------------------------------------+----------------+
+| A Hologram for the King: A Novel          |            154 |
+| A Heartbreaking Work of Staggering Genius |            104 |
+| Coraline                                  |            100 |
+| Oblivion: Stories                         |            172 |
+| fake_book                                 |            287 |
++-------------------------------------------+----------------+
+*/
+
+Example:
+Looking for phone numbers in this format (235)234-0987
+LIKE '(___)___-____ %';
