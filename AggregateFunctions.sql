@@ -220,3 +220,49 @@ Result:
 |        634 |
 +------------+
 */
+
+--------------------------------------------------------------------
+PROBLEM WHEN WE TRY TO PRINT TITLE with MIN() or MAX()
+Ex.
+SELECT MAX(pages), title, FROM books;
+Result:
+/*
+It will give errors or show the wrong result
+*/
+
+Solution (using sub query)
+SELECT title, pages FROM books
+WHERE pages = (SELECT MAX(pages) FROM books);
+Result:
+/*
++-------------------------------------------+-------+
+| title                                     | pages |
++-------------------------------------------+-------+
+| The Amazing Adventures of Kavalier & Clay |   634 |
++-------------------------------------------+-------+
+*/
+
+OR (using ORDER BY)
+Ex.
+SELECT title, pages FROM books
+ORDER BY pages DESC LIMIT 1; // FOR MAX
+Result:
+/*
++-------------------------------------------+-------+
+| title                                     | pages |
++-------------------------------------------+-------+
+| The Amazing Adventures of Kavalier & Clay |   634 |
++-------------------------------------------+-------+
+*/
+
+Ex.
+SELECT title, pages FROM books
+ORDER BY pages ASC LIMIT 1; // FOR MIN
+Result:
+/*
++-----------------------------------------------------+-------+
+| title                                               | pages |
++-----------------------------------------------------+-------+
+| What We Talk About When We Talk About Love: Stories |   176 |
++-----------------------------------------------------+-------+
+*/
