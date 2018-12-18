@@ -83,3 +83,79 @@ Result:
 |        6 |
 +----------+
 */
+
+--------------------------------------------------------------------
+GROUP BY 
+summarizes or aggregates identical data into single rows.
+
+--> Count books on each group by authors' lastnames
+Ex.
+SELECT author_lname, COUNT(*)
+FROM books GROUP BY author_lname;
+REsult:
+/*
++----------------+----------+
+| author_lname   | COUNT(*) |
++----------------+----------+
+| Lahiri         |        2 |
+| Gaiman         |        3 |
+| Eggers         |        3 |
+| Chabon         |        1 |
+| Smith          |        1 |
+| Carver         |        2 |
+| DeLillo        |        1 |
+| Steinbeck      |        1 |
+| Foster Wallace |        2 |
+| Harris         |        2 |
+| Saunders       |        1 |
++----------------+----------+
+*/
+
+Ex.
+SELECT author_fname, author_lname, COUNT(*)
+FROM books GROUP BY author_lname, author_fname;
+Result:
+/*
++--------------+----------------+----------+
+| author_fname | author_lname   | COUNT(*) |
++--------------+----------------+----------+
+| Jhumpa       | Lahiri         |        2 |
+| Neil         | Gaiman         |        3 |
+| Dave         | Eggers         |        3 |
+| Michael      | Chabon         |        1 |
+| Patti        | Smith          |        1 |
+| Raymond      | Carver         |        2 |
+| Don          | DeLillo        |        1 |
+| John         | Steinbeck      |        1 |
+| David        | Foster Wallace |        2 |
+| Dan          | Harris         |        1 |*** duplucated lastname
+| Freida       | Harris         |        1 |*** duplucated lastname
+| George       | Saunders       |        1 |
++--------------+----------------+----------+
+*/
+
+Ex. 
+SELECT released_year, COUNT(*) FROM books GROUP BY released_year;
+Result:
+/*
++---------------+----------+
+| released_year | COUNT(*) |
++---------------+----------+
+|          2003 |        2 |
+|          2016 |        1 |
+|          2001 |        3 |
+|          1996 |        1 |
+|          2012 |        1 |
+|          2013 |        1 |
+|          2000 |        1 |
+|          2010 |        1 |
+|          1981 |        1 |
+|          1989 |        1 |
+|          1985 |        1 |
+|          1945 |        1 |
+|          2004 |        1 |
+|          2005 |        1 |
+|          2014 |        1 |
+|          2017 |        1 |
++---------------+----------+
+*/
