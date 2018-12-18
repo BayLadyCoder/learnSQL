@@ -191,3 +191,32 @@ Result:
 | In 2017 1 book(s) released |
 +----------------------------+
 */
+
+--------------------------------------------------------------------
+MIN and MAX
+Find minimum and maximum values on the table or in the GROUP(GROUP BY)
+
+without GROUP BY
+find the minimum released_year on the table
+Ex.
+SELECT MIN(released_year) FROM books;
+Result:
+/*
++--------------------+
+| MIN(released_year) |
++--------------------+
+|               1945 |
++--------------------+
+*/
+
+Ex.
+Ex.
+SELECT MAX(pages) FROM books;
+Result:
+/*
++------------+
+| MAX(pages) |
++------------+
+|        634 |
++------------+
+*/
