@@ -59,3 +59,27 @@ Result: --> Now we have 12 different authors
 |                                         12 |
 +--------------------------------------------+
 */
+
+
+--------------------------------------------------------------------
+COUNT with WHERE and LIKE
+
+How many titles that contain "the"?
+Ex.
+SELECT COUNT(title) FROM books WHERE title Like '%the%';
+OR
+SELECT COUNT(*) FROM books WHERE title Like '%the%';
+Result:
+/*
++--------------+
+| COUNT(title) |
++--------------+
+|            6 |
++--------------+
+
++----------+
+| COUNT(*) |
++----------+
+|        6 |
++----------+
+*/
