@@ -266,3 +266,62 @@ Result:
 | What We Talk About When We Talk About Love: Stories |   176 |
 +-----------------------------------------------------+-------+
 */
+
+--------------------------------------------------------------------
+MIN() and MAX() with GROUP BY
+
+Find the year each author published their first book
+Ex.
+SELECT author_fname, author_lname, MIN(released_year) FROM books GROUP BY author_lname, author_fname;
+Result:
+/*
++--------------+----------------+--------------------+
+| author_fname | author_lname   | MIN(released_year) |
++--------------+----------------+--------------------+
+| Jhumpa       | Lahiri         |               1996 |
+| Neil         | Gaiman         |               2001 |
+| Dave         | Eggers         |               2001 |
+| Michael      | Chabon         |               2000 |
+| Patti        | Smith          |               2010 |
+| Raymond      | Carver         |               1981 |
+| Don          | DeLillo        |               1985 |
+| John         | Steinbeck      |               1945 |
+| David        | Foster Wallace |               2004 |
+| Dan          | Harris         |               2014 |
+| Freida       | Harris         |               2001 |
+| George       | Saunders       |               2017 |
++--------------+----------------+--------------------+
+*/
+
+Find the longest page count for each author
+Ex.
+SELECT author_fname, author_lname, MAX(pages) FROM books
+    GROUP BY author_lname, author_fname;
+Result:
+/*
++--------------+----------------+------------+
+| author_fname | author_lname   | MAX(pages) |
++--------------+----------------+------------+
+| Jhumpa       | Lahiri         |        291 |
+| Neil         | Gaiman         |        465 |
+| Dave         | Eggers         |        504 |
+| Michael      | Chabon         |        634 |
+| Patti        | Smith          |        304 |
+| Raymond      | Carver         |        526 |
+| Don          | DeLillo        |        320 |
+| John         | Steinbeck      |        181 |
+| David        | Foster Wallace |        343 |
+| Dan          | Harris         |        256 |
+| Freida       | Harris         |        428 |
+| George       | Saunders       |        367 |
++--------------+----------------+------------+
+*/
+
+Clean up version
+Ex.
+SELECT
+    CONCAT(author_fname, ' ', author_lname) AS author,
+    MAX(pages) AS 'longest book'
+    FROM books
+    GROUP BY author_lname,
+             author_fname;
