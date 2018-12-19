@@ -325,3 +325,31 @@ SELECT
     FROM books
     GROUP BY author_lname,
              author_fname;
+
+--------------------------------------------------------------------
+SUM
+Adds things together
+
+Sum all pages in the entire database
+Ex.
+SELECT SUM(pages) FROM books;
+Result:
+/*
++------------+
+| SUM(pages) |
++------------+
+|       6623 |
++------------+
+*/
+
+Sum all released years in the entire database
+Ex.
+SELECT SUM(released_year) FROM books;
+Result:
+/*
++--------------------+
+| SUM(released_year) |
++--------------------+
+|              37996 |
++--------------------+
+*/
