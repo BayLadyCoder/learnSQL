@@ -381,3 +381,18 @@ Result:
 +--------------+----------------+------------+
 */
 
+--------------------------------------------------------------------
+AVG()
+Find Average
+
+Calculate the average released_year across all books
+Ex.
+SELECT AVG(released_year) FROM books;
+Result:
+/*
++--------------------+
+| AVG(released_year) |
++--------------------+
+|          1999.7895 |
++--------------------+
+*/
