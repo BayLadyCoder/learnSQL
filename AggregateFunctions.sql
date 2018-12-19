@@ -327,7 +327,7 @@ SELECT
              author_fname;
 
 --------------------------------------------------------------------
-SUM
+SUM()
 Adds things together
 
 Sum all pages in the entire database
@@ -353,3 +353,31 @@ Result:
 |              37996 |
 +--------------------+
 */
+
+--------------------------------------------------------------------
+SUM() with GROUP BY
+
+Sum all the pages each author has written
+Ex.
+SELECT author_fname, author_lname, SUM(pages) FROM books
+    GROUP BY author_lname, author_fname;
+Result:
+/*
++--------------+----------------+------------+
+| author_fname | author_lname   | SUM(pages) |
++--------------+----------------+------------+
+| Jhumpa       | Lahiri         |        489 |
+| Neil         | Gaiman         |        977 |
+| Dave         | Eggers         |       1293 |
+| Michael      | Chabon         |        634 |
+| Patti        | Smith          |        304 |
+| Raymond      | Carver         |        702 |
+| Don          | DeLillo        |        320 |
+| John         | Steinbeck      |        181 |
+| David        | Foster Wallace |        672 |
+| Dan          | Harris         |        256 |
+| Freida       | Harris         |        428 |
+| George       | Saunders       |        367 |
++--------------+----------------+------------+
+*/
+
