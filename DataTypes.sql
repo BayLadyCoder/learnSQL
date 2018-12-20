@@ -40,3 +40,37 @@ INSERT INTO items(price)
         (34.88), --> 34.88
         (298.999999), --> 299.00 (round up)
         (1.9999); --> 2.00 (round up)
+
+-------------------------------------------------------------------------------
+FLOAT and DOUBLE
+PROS
+Store larger numbers than DECIMAL and use less space
+
+CONS
+they are approximate, while DECIMAL is exact
+
+
+dataType FLOAT memoryNeeded 4 bytes precisionIssues ~7 digits
+dataType DOUBLE memoryNeeded 8 bytes precisionIssues  ~15 digits
+
+Ex.
+CREATE TABLE floatingNumbers (price FLOAT);
+
+INSERT INTO floatingNumbers(price) VALUES (88.45),(8877.45),(8787673.45);
+
+Result:
+/*
++-------+-------+------+-----+---------+-------+
+| Field | Type  | Null | Key | Default | Extra |
++-------+-------+------+-----+---------+-------+
+| price | float | YES  |     | NULL    |       |
++-------+-------+------+-----+---------+-------+
+
++---------+
+| price   |
++---------+
+|   88.45 |
+| 8877.45 |
+| 8787670 |
++---------+
+*/
