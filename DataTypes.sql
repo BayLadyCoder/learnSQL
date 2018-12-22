@@ -74,3 +74,19 @@ Result:
 | 8787670 |
 +---------+
 */
+
+-------------------------------------------------------------------------------
+DATE 
+Values with a Date but no TIME
+format 
+'YYYY-MM-DD'
+
+TIME 
+Values with a Time but no DATE
+format
+'HH:MM:SS'
+
+DATETIME
+Values with a DATE and TIME
+format
+'YYYY-MM-DD HH:MM:SS'
