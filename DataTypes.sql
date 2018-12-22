@@ -90,3 +90,16 @@ DATETIME
 Values with a DATE and TIME
 format
 'YYYY-MM-DD HH:MM:SS'
+
+Ex.
+CREATE TABLE peopleBD (
+    name VARCHAR(100),
+    birthDate DATE,
+    birthTime TIME,
+    birthDateTime DATETIME
+);
+
+INSERT INTO peopleBD (name, birthDate, birthTime, birthDateTime)
+    VALUES ('Katniss', '2015-10-07', '05:55:08', '2015-10-08 05:55:08'),
+    ('Sammy', '2008-05-12', '12:20:48', '2008-05-12 12:20:48'),
+    ('Ringo', '2005-12-31', '18:30:45', '2005-12-31 18:30:45');
