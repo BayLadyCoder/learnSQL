@@ -174,3 +174,63 @@ Result:
 | New Born | 2018-12-22 | 00:07:04  | 2018-12-22 00:07:04 |
 +----------+------------+-----------+---------------------+
 */
+-------------------------------------------------------------------------------
+Formatting DATES
+mySQL DateTime Functions in mySQL reference website
+
+DAY() = Extract the date part of a date or datetime expression
+Ex.
+SELECT name, birthDate, DAY(birthDate) FROM peopleBD;
+/*
++----------+------------+----------------+
+| name     | birthDate  | DAY(birthDate) |
++----------+------------+----------------+
+| Katniss  | 2015-10-07 |              7 |
+| Sammy    | 2008-05-12 |             12 |
+| Ringo    | 2005-12-31 |             31 |
+| New Born | 2018-12-22 |             22 |
++----------+------------+----------------+
+*/
+
+DAYNAME() = Return the name of the weekday
+Ex.
+SELECT name, birthDate, DAYNAME(birthDate) FROM peopleBD;
+/*
++----------+------------+--------------------+
+| name     | birthDate  | DAYNAME(birthDate) |
++----------+------------+--------------------+
+| Katniss  | 2015-10-07 | Wednesday          |
+| Sammy    | 2008-05-12 | Monday             |
+| Ringo    | 2005-12-31 | Saturday           |
+| New Born | 2018-12-22 | Saturday           |
++----------+------------+--------------------+
+*/
+
+DAYOFYEAR() = Return the day of the year (1-366)
+Ex.
+SELECT name, birthDate, DAYOFYEAR(birthDate) FROM peopleBD;
+/*
++----------+------------+----------------------+
+| name     | birthDate  | DAYOFYEAR(birthDate) |
++----------+------------+----------------------+
+| Katniss  | 2015-10-07 |                  280 |
+| Sammy    | 2008-05-12 |                  133 |
+| Ringo    | 2005-12-31 |                  365 |
+| New Born | 2018-12-22 |                  356 |
++----------+------------+----------------------+
+*/
+
+MONTHNAME() = Return the name of the month
+Ex.
+SELECT name, birthDate, MONTHNAME(birthDate) FROM peopleBD;
+/*
++----------+------------+----------------------+
+| name     | birthDate  | MONTHNAME(birthDate) |
++----------+------------+----------------------+
+| Katniss  | 2015-10-07 | October              |
+| Sammy    | 2008-05-12 | May                  |
+| Ringo    | 2005-12-31 | December             |
+| New Born | 2018-12-22 | December             |
++----------+------------+----------------------+
+*/
+
