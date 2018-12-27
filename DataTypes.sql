@@ -445,3 +445,51 @@ SELECT * FROM comments;
 | Hello World!             | 2018-12-27 16:05:30 |
 +--------------------------+---------------------+
 */
+
+TIMESTAMP with ON UPDATE
+-- CURRENT_TIMESTAMP and NOW() ARE THE SAME
+
+Ex.
+CREATE TABLE comments2 (
+        content VARCHAR(100),
+        changed_at TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO comments2 (content) VALUES('lol what a funny article');
+INSERT INTO comments2 (content) VALUES('Hahaha');
+INSERT INTO comments2 (content) VALUES('Hello World!');
+
+SELECT * FROM comments2;
+/*
++--------------------------+---------------------+
+| content                  | changed_at          |
++--------------------------+---------------------+
+| lol what a funny article | 2018-12-27 16:16:47 |
+| Hahaha                   | 2018-12-27 16:17:07 |
+| Hello World!             | 2018-12-27 16:17:46 |
++--------------------------+---------------------+
+*/
+
+UPDATE comments2 SET content='this is not funny any more' WHERE content='lol what a funny article';
+
+SELECT * FROM comments2;
+/*
++----------------------------+---------------------+
+| content                    | changed_at          |
++----------------------------+---------------------+
+| this is not funny any more | 2018-12-27 16:19:32 | TIMESTAMP changed when updated
+| Hahaha                     | 2018-12-27 16:17:07 |
+| Hello World!               | 2018-12-27 16:17:46 |
++----------------------------+---------------------+
+*/
+
+SELECT * FROM comments2 ORDER BY changed_at;
+/*
++----------------------------+---------------------+
+| content                    | changed_at          |
++----------------------------+---------------------+
+| Hahaha                     | 2018-12-27 16:17:07 |
+| Hello World!               | 2018-12-27 16:17:46 |
+| this is not funny any more | 2018-12-27 16:19:32 |
++----------------------------+---------------------+
+*/
