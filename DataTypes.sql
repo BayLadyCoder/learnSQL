@@ -415,3 +415,33 @@ SELECT birthDateTime, birthDateTime - INTERVAL 12 MONTH + INTERVAL 30 MINUTE  as
 | 2018-12-22 00:07:04 | 2017-12-22 00:37:04 |
 +---------------------+---------------------+
 */
+
+-------------------------------------------------------------------------------
+TIMESTAMP
+
+DATETIME VS TIMESTAMP
+They both store DATE and TIME
+
+DATETIME support range is '1000-01-01 00:00:00' to '9999-12-31 23:59:59' use more space in the memory
+TIMESTAMP support range is '1970-01-01 00:00:01' to '2038-01-19 03-14-07' use less space in the  memory
+
+Ex.
+CREATE TABLE comments (
+        content VARCHAR(100),
+        created_at TIMESTAMP DEFAULT NOW()
+);
+
+INSERT INTO comments (content) VALUES('lol what a funny article');
+INSERT INTO comments (content) VALUES('Hahaha');
+INSERT INTO comments (content) VALUES('Hello World!');
+
+SELECT * FROM comments;
+/*
++--------------------------+---------------------+
+| content                  | created_at          |
++--------------------------+---------------------+
+| lol what a funny article | 2018-12-27 16:04:37 |
+| Hahaha                   | 2018-12-27 16:05:15 |
+| Hello World!             | 2018-12-27 16:05:30 |
++--------------------------+---------------------+
+*/
