@@ -312,3 +312,22 @@ SELECT DATE_FORMAT(birthDate, '%m/%d/%Y') FROM peopleBD;
 */
 
 -------------------------------------------------------------------------------
+DATE MATH
+How long ago?
+--> https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html
+
+
+DATEDIFF()
+Ex.
+SELECT name, birthDate, DATEDIFF(NOW(), birthDate) from peopleBD;
+/*
++----------+------------+----------------------------+
+| name     | birthDate  | DATEDIFF(NOW(), birthDate) |
++----------+------------+----------------------------+
+| Katniss  | 2015-10-07 |                       1177 |
+| Sammy    | 2008-05-12 |                       3881 |
+| Ringo    | 2005-12-31 |                       4744 |
+| New Born | 2018-12-22 |                          5 |
++----------+------------+----------------------------+
+*/
+
