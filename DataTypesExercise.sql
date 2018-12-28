@@ -4,15 +4,26 @@ States in the USA (MD, VA, NY)
 2. Fill in the blanks
 CREATE TABLE inventory (
     item_name ________,
-    price _________,
+    price _________, (price is always less than 1,000,000)
     quantity _______
 );
 
 CREATE TABLE inventory (
     item_name VARCHAR(100),
-    price DECIMAL,  (if price is always less than 1,000,000 we can use FLOAT)
+    price DECIMAL(8, 2),  
     quantity INT
 );
+
+INSERT INTO inventory (item_name, price, quantity)
+    VALUES('cat box', 19.95, 250);
+
+/*
++-----------+-------+----------+
+| item_name | price | quantity |
++-----------+-------+----------+
+| cat box   | 19.95 |      250 |
++-----------+-------+----------+
+*/
 
 3. What is the difference between DATETIME and TIMESTAMP
 DATETIME can store a lot more range of time than TIMESTAMP
@@ -75,12 +86,12 @@ SELECT NOW(), DATE_FORMAT(NOW(), '%m/%d/%Y');
 'January 2nd at 3:15'
 'April 1st at 10:18'
 Implementation:
-SELECT NOW(), DATE_FORMAT(NOW(), CONCAT('%M %D', ' at ', '%k:%i')) as 'date and time';
+SELECT NOW(), DATE_FORMAT(NOW(), '%M %D at %k:%i') as 'date and time';
 /*
 +---------------------+-----------------------+
 | NOW()               | date and time         |
 +---------------------+-----------------------+
-| 2018-12-28 00:09:02 | December 28th at 0:09 |
+| 2018-12-28 00:26:29 | December 28th at 0:26 |
 +---------------------+-----------------------+
 */
 
