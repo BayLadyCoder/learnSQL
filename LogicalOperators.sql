@@ -57,3 +57,33 @@ WHERE author_lname != 'Harris';
 | Lincoln In The Bardo                                | Saunders       |
 +-----------------------------------------------------+----------------+
 */
+
+-------------------------------------------------------------------------------
+NOT LIKE
+match all pattern except thisn patter(NOT LIKE)
+
+Ex. -- Select books with titles that don't start with 'W'
+SELECT title FROM books
+WHERE title NOT LIKE 'W%';
+/*
++-------------------------------------------+
+| title                                     |
++-------------------------------------------+
+| The Namesake                              |
+| Norse Mythology                           |
+| American Gods                             |
+| Interpreter of Maladies                   |
+| A Hologram for the King: A Novel          |
+| The Circle                                |
+| The Amazing Adventures of Kavalier & Clay |
+| Just Kids                                 |
+| A Heartbreaking Work of Staggering Genius |
+| Coraline                                  |
+| Cannery Row                               |
+| Oblivion: Stories                         |
+| Consider the Lobster                      |
+| 10% Happier                               |
+| fake_book                                 |
+| Lincoln In The Bardo                      |
++-------------------------------------------+
+*/
