@@ -379,3 +379,79 @@ CAST('2019-01-01' AS DATETIME);
 | New Born | 2018-12-22 | 00:07:04  | 2018-12-22 00:07:04 |
 +----------+------------+-----------+---------------------+
 */
+-------------------------------------------------------------------------------
+IN 
+
+-- Select books written by 'Carver' or 'Lahiri' or 'Smith'
+Ex.
+SELECT title, author_lname FROM books
+WHERE author_lname IN ('Carver', 'Lahiri', 'Smith');
+/*
++-----------------------------------------------------+--------------+
+| title                                               | author_lname |
++-----------------------------------------------------+--------------+
+| The Namesake                                        | Lahiri       |
+| Interpreter of Maladies                             | Lahiri       |
+| Just Kids                                           | Smith        |
+| What We Talk About When We Talk About Love: Stories | Carver       |
+| Where I'm Calling From: Selected Stories            | Carver       |
++-----------------------------------------------------+--------------+
+*/
+
+Ex.
+SELECT title, released_year FROM books
+WHERE released_year IN (2017, 1985);
+/*
++----------------------+---------------+
+| title                | released_year |
++----------------------+---------------+
+| White Noise          |          1985 |
+| Lincoln In The Bardo |          2017 |
++----------------------+---------------+
+*/
+
+-------------------------------------------------------------------------------
+NOT IN
+
+-- Select books that are not publish in these years (2000, 2002, 2004, 2008, ...)
+Ex.1 -- OK way to do if you have specific years that don't want to include
+SELECT title, released_year FROM books
+WHERE released_year >= 2000 &&
+released_year NOT IN (2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018);
+/*
++-------------------------------------------+---------------+
+| title                                     | released_year |
++-------------------------------------------+---------------+
+| The Namesake                              |          2003 |
+| American Gods                             |          2001 |
+| The Circle                                |          2013 |
+| A Heartbreaking Work of Staggering Genius |          2001 |
+| Coraline                                  |          2003 |
+| Consider the Lobster                      |          2005 |
+| fake_book                                 |          2001 |
+| Lincoln In The Bardo                      |          2017 |
++-------------------------------------------+---------------+
+*/
+
+MODULUS %
+give the remainder after division
+
+-- Select books that are not publish in even number years (2000, 2002, 2004, 2008, ...)
+Ex. -- Better way to not include the even number year
+SELECT title, released_year FROM books
+WHERE released_year >= 2000 &&
+released_year % 2 != 0 ORDER BY released_year;
+/*
++-------------------------------------------+---------------+
+| title                                     | released_year |
++-------------------------------------------+---------------+
+| American Gods                             |          2001 |
+| A Heartbreaking Work of Staggering Genius |          2001 |
+| fake_book                                 |          2001 |
+| The Namesake                              |          2003 |
+| Coraline                                  |          2003 |
+| Consider the Lobster                      |          2005 |
+| The Circle                                |          2013 |
+| Lincoln In The Bardo                      |          2017 |
++-------------------------------------------+---------------+
+*/
