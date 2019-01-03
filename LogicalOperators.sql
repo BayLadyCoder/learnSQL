@@ -239,3 +239,17 @@ SELECT 1 < 5 && 7 = 9; --False / 7 is not equal to 9
 SELECT -10 > -20 && 0 <= 0; --True / both conditions are true
 SELECT -40 <= -0 && 10 > 40; --False / 10 is not greater than 40
 SELECT 54 <= 54 && 'a' = 'A'; --True / both conditions are true
+
+We can use AND && with more than TWO conditions
+Ex.
+SELECT title, author_lname, released_year FROM books
+WHERE author_lname = 'Eggers' &&
+released_year > 2010 AND
+title LIKE '%novel%';
+/*
++----------------------------------+--------------+---------------+
+| title                            | author_lname | released_year |
++----------------------------------+--------------+---------------+
+| A Hologram for the King: A Novel | Eggers       |          2012 |
++----------------------------------+--------------+---------------+
+*/
