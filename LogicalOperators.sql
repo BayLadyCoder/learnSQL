@@ -300,3 +300,53 @@ SELECT 40 <= 100 || -2 > 0; --True / 40 <= 100 is true
 SELECT 10 > 5 || 5 = 5; --True / both conditions are true
 SELECT 'a' = 5 || 3000 > 2000; --True / 3000 > 2000 is true
 SELECT 'a' = 'b' || 3000 < 200; --False / both conditions are false
+-------------------------------------------------------------------------------
+
+BETWEEN
+
+format:
+BETWEEN x AND y;
+
+Ex. -- Select books published between 2004-2015 (2004 and 2015 are inclusive)
+SELECT title, released_year FROM books
+WHERE released_year BETWEEN 2004 AND 2015;
+/*
++----------------------------------+---------------+
+| title                            | released_year |
++----------------------------------+---------------+
+| A Hologram for the King: A Novel |          2012 |
+| The Circle                       |          2013 |
+| Just Kids                        |          2010 |
+| Oblivion: Stories                |          2004 |
+| Consider the Lobster             |          2005 |
+| 10% Happier                      |          2014 |
++----------------------------------+---------------+
+*/
+
+-------------------------------------------------------------------------------
+
+NOT BETWEEN
+
+Ex. -- Select books that are not published between 2004-2015 (2004 and 2015 are inclusive)
+SELECT title, released_year FROM books
+WHERE released_year NOT BETWEEN 2004 AND 2015;
+/*
++-----------------------------------------------------+---------------+
+| title                                               | released_year |
++-----------------------------------------------------+---------------+
+| The Namesake                                        |          2003 |
+| Norse Mythology                                     |          2016 |
+| American Gods                                       |          2001 |
+| Interpreter of Maladies                             |          1996 |
+| The Amazing Adventures of Kavalier & Clay           |          2000 |
+| A Heartbreaking Work of Staggering Genius           |          2001 |
+| Coraline                                            |          2003 |
+| What We Talk About When We Talk About Love: Stories |          1981 |
+| Where I'm Calling From: Selected Stories            |          1989 |
+| White Noise                                         |          1985 |
+| Cannery Row                                         |          1945 |
+| fake_book                                           |          2001 |
+| Lincoln In The Bardo                                |          2017 |
++-----------------------------------------------------+---------------+
+*/
+-------------------------------------------------------------------------------
