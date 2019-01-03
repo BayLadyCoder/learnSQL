@@ -158,3 +158,46 @@ SELECT 9 > -10; --True
 SELECT 1 > 1; --False
 SELECT 'a' > 'b'; --False // 'a' < 'b' is True // a comes before b
 SELECT 'A' > 'a'; --False // 'A' = 'a' is True // case doesn't matter in SQL
+
+-------------------------------------------------------------------------------
+LESS THAN <
+
+Ex. -- Select books released BEFORE the year 2000
+SELECT title, released_year FROM books
+WHERE released_year < 2000;
+/*
++-----------------------------------------------------+---------------+
+| title                                               | released_year |
++-----------------------------------------------------+---------------+
+| Interpreter of Maladies                             |          1996 |
+| What We Talk About When We Talk About Love: Stories |          1981 |
+| Where I'm Calling From: Selected Stories            |          1989 |
+| White Noise                                         |          1985 |
+| Cannery Row                                         |          1945 |
++-----------------------------------------------------+---------------+
+*/
+
+LESS THAN OR EQUAL TO <=
+
+Ex. -- year 2000 is inclusive
+SELECT title, released_year FROM books
+WHERE released_year <= 2000;
+/*
++-----------------------------------------------------+---------------+
+| title                                               | released_year |
++-----------------------------------------------------+---------------+
+| Interpreter of Maladies                             |          1996 |
+| The Amazing Adventures of Kavalier & Clay           |          2000 |
+| What We Talk About When We Talk About Love: Stories |          1981 |
+| Where I'm Calling From: Selected Stories            |          1989 |
+| White Noise                                         |          1985 |
+| Cannery Row                                         |          1945 |
++-----------------------------------------------------+---------------+
+*/
+
+Exercise:
+SELECT 3 < -10; --False
+SELECT -10 < -9; --True
+SELECT 42 <= 42; --True
+SELECT 'h' < 'p'; --True
+SELECT 'Q' <= 'q'; --True
