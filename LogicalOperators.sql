@@ -201,3 +201,41 @@ SELECT -10 < -9; --True
 SELECT 42 <= 42; --True
 SELECT 'h' < 'p'; --True
 SELECT 'Q' <= 'q'; --True
+-------------------------------------------------------------------------------
+
+AND &&
+Only return when every condition is True
+Can either use the word 'AND' or use '&&'
+
+Ex. -- AND
+SELECT title, author_lname, released_year FROM books
+WHERE author_lname = 'Eggers' AND
+released_year > 2000;
+/*
++-------------------------------------------+--------------+---------------+
+| title                                     | author_lname | released_year |
++-------------------------------------------+--------------+---------------+
+| A Hologram for the King: A Novel          | Eggers       |          2012 |
+| The Circle                                | Eggers       |          2013 |
+| A Heartbreaking Work of Staggering Genius | Eggers       |          2001 |
++-------------------------------------------+--------------+---------------+
+*/
+
+Ex. -- &&
+SELECT title, author_lname, released_year FROM books
+WHERE author_lname = 'Eggers' &&
+released_year > 2010;
+/*
++----------------------------------+--------------+---------------+
+| title                            | author_lname | released_year |
++----------------------------------+--------------+---------------+
+| A Hologram for the King: A Novel | Eggers       |          2012 |
+| The Circle                       | Eggers       |          2013 |
++----------------------------------+--------------+---------------+
+*/
+
+Exercise:
+SELECT 1 < 5 && 7 = 9; --False / 7 is not equal to 9
+SELECT -10 > -20 && 0 <= 0; --True / both conditions are true
+SELECT -40 <= -0 && 10 > 40; --False / 10 is not greater than 40
+SELECT 54 <= 54 && 'a' = 'A'; --True / both conditions are true
