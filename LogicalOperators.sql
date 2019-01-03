@@ -253,3 +253,50 @@ title LIKE '%novel%';
 | A Hologram for the King: A Novel | Eggers       |          2012 |
 +----------------------------------+--------------+---------------+
 */
+
+-------------------------------------------------------------------------------
+OR ||
+at least ONE condition must be True
+
+Ex. -- get all books by 'Eggers' (including year before 2010) and all books that release after 2010
+SELECT title, author_lname, released_year FROM books
+WHERE author_lname = 'Eggers' ||
+released_year > 2010;
+/*
++-------------------------------------------+--------------+---------------+
+| title                                     | author_lname | released_year |
++-------------------------------------------+--------------+---------------+
+| Norse Mythology                           | Gaiman       |          2016 |
+| A Hologram for the King: A Novel          | Eggers       |          2012 |
+| The Circle                                | Eggers       |          2013 |
+| A Heartbreaking Work of Staggering Genius | Eggers       |          2001 |
+| 10% Happier                               | Harris       |          2014 |
+| Lincoln In The Bardo                      | Saunders     |          2017 |
++-------------------------------------------+--------------+---------------+
+*/
+
+Ex. -- use 'OR' and '||' with more than TWO conditions
+SELECT title, author_lname, stock_quantity, released_year FROM books
+WHERE author_lname = 'Eggers' ||
+released_year > 2010 OR
+stock_quantity > 100;
+/*
++-------------------------------------------+----------------+----------------+---------------+
+| title                                     | author_lname   | stock_quantity | released_year |
++-------------------------------------------+----------------+----------------+---------------+
+| Norse Mythology                           | Gaiman         |             43 |          2016 |
+| A Hologram for the King: A Novel          | Eggers         |            154 |          2012 |
+| The Circle                                | Eggers         |             26 |          2013 |
+| A Heartbreaking Work of Staggering Genius | Eggers         |            104 |          2001 |
+| Oblivion: Stories                         | Foster Wallace |            172 |          2004 |
+| 10% Happier                               | Harris         |             29 |          2014 |
+| fake_book                                 | Harris         |            287 |          2001 |
+| Lincoln In The Bardo                      | Saunders       |           1000 |          2017 |
++-------------------------------------------+----------------+----------------+---------------+
+*/
+
+Exercise:
+SELECT 40 <= 100 || -2 > 0; --True / 40 <= 100 is true
+SELECT 10 > 5 || 5 = 5; --True / both conditions are true
+SELECT 'a' = 5 || 3000 > 2000; --True / 3000 > 2000 is true
+SELECT 'a' = 'b' || 3000 < 200; --False / both conditions are false
