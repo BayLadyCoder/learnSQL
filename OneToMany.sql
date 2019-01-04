@@ -88,3 +88,35 @@ SELECT * FROM customers, orders;
 +----+------------+-----------+------------------+----+------------+--------+-------------+
 */
 --------------------------------------------------------------------------------------------
+INNER JOIN
+-- Choose only the ones that are relevant 
+
+
+-- IMPLICIT INNER JOIN
+SELECT * FROM customers, orders
+WHERE customers.id = customer_id;
+/*
++----+------------+-----------+------------------+----+------------+--------+-------------+
+| id | first_name | last_name | email            | id | order_date | amount | customer_id |
++----+------------+-----------+------------------+----+------------+--------+-------------+
+|  1 | Boy        | George    | george@gmail.com |  1 | 2016-02-10 |  99.99 |           1 |
+|  1 | Boy        | George    | george@gmail.com |  2 | 2017-11-11 |  35.50 |           1 |
+|  2 | George     | Michael   | gm@gmail.com     |  3 | 2014-12-12 | 800.67 |           2 |
+|  2 | George     | Michael   | gm@gmail.com     |  4 | 2015-01-03 |  12.50 |           2 |
+|  5 | Bette      | Davis     | bette@aol.com    |  5 | 1999-04-11 | 450.25 |           5 |
++----+------------+-----------+------------------+----+------------+--------+-------------+
+*/
+
+SELECT first_name, last_name, order_date, amount FROM customers, orders
+WHERE customers.id = customer_id;
+/*
++------------+-----------+------------+--------+
+| first_name | last_name | order_date | amount |
++------------+-----------+------------+--------+
+| Boy        | George    | 2016-02-10 |  99.99 |
+| Boy        | George    | 2017-11-11 |  35.50 |
+| George     | Michael   | 2014-12-12 | 800.67 |
+| George     | Michael   | 2015-01-03 |  12.50 |
+| Bette      | Davis     | 1999-04-11 | 450.25 |
++------------+-----------+------------+--------+
+*/
