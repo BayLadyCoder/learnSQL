@@ -386,3 +386,26 @@ RIGHT JOIN orders
 | NULL       | NULL      | 2019-01-04 | 777.77 |
 +------------+-----------+------------+--------+
 */
+
+----------------------------------------------------------------------------------------
+RIGHT JOIN with IFNULL(), GROUP BY, SUM()
+
+Ex.
+SELECT 
+    IFNULL(first_name, 'MISSING') AS firstname, 
+    IFNULL(last_name, 'USER') AS lastname,  
+    SUM(amount) 
+FROM customers
+RIGHT JOIN orders
+    ON customers.id = orders.customer_id
+GROUP BY first_name, last_name;
+/*
++-----------+----------+-------------+
+| firstname | lastname | SUM(amount) |
++-----------+----------+-------------+
+| Boy       | George   |      135.49 |
+| George    | Michael  |      813.17 |
+| Bette     | Davis    |      450.25 |
+| MISSING   | USER     |      801.22 |
++-----------+----------+-------------+
+*/
