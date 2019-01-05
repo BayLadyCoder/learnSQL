@@ -273,3 +273,25 @@ GROUP BY customers.id;
 | Bette      | Davis     |      450.25 |
 +------------+-----------+-------------+
 */
+----------------------------------------------------------------------------------------
+IFNULL(arg1, arg2)
+arg1 = What we expect to be NULL
+arg2 = What we want to replace instead of NULL
+
+Ex.
+SELECT first_name, last_name, IFNULL(SUM(amount), 0) AS total_spent FROM customers
+LEFT JOIN orders
+    ON customers.id = orders.customer_id
+GROUP BY customers.id
+ORDER BY total_spent;
+/*
++------------+-----------+-------------+
+| first_name | last_name | total_spent |
++------------+-----------+-------------+
+| David      | Bowie     |        0.00 |
+| Blue       | Steele    |        0.00 |
+| Boy        | George    |      135.49 |
+| Bette      | Davis     |      450.25 |
+| George     | Michael   |      813.17 |
++------------+-----------+-------------+
+*/
