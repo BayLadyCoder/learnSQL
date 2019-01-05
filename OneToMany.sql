@@ -329,3 +329,41 @@ VALUES ('2016/02/10', 99.99, 1),
        ('2014/12/12', 800.67, 2),
        ('2015/01/03', 12.50, 2),
        ('1999/04/11', 450.25, 5);
+
+-- Now we have same tables as before but without FOREIGN KEY
+
+
+-- Inserting new data that the customer_id in orders table doesn't exist in customers table
+INSERT INTO orders (order_date, amount, customer_id)
+VALUES ('2017/11/05', 23.45, 45),
+        (CURDATE(), 777.77, 109);
+
+SELECT * FROM customers;
+-- only have id 1-5
+/*
++----+------------+-----------+------------------+
+| id | first_name | last_name | email            |
++----+------------+-----------+------------------+
+|  1 | Boy        | George    | george@gmail.com |
+|  2 | George     | Michael   | gm@gmail.com     |
+|  3 | David      | Bowie     | david@gmail.com  |
+|  4 | Blue       | Steele    | blue@gmail.com   |
+|  5 | Bette      | Davis     | bette@aol.com    |
++----+------------+-----------+------------------+
+*/
+
+SELECT * FROM orders;
+/*
++----+------------+--------+-------------+
+| id | order_date | amount | customer_id |
++----+------------+--------+-------------+
+|  1 | 2016-02-10 |  99.99 |           1 |
+|  2 | 2017-11-11 |  35.50 |           1 |
+|  3 | 2014-12-12 | 800.67 |           2 |
+|  4 | 2015-01-03 |  12.50 |           2 |
+|  5 | 1999-04-11 | 450.25 |           5 |
+|  6 | 2017-11-05 |  23.45 |          45 | ***
+|  7 | 2019-01-04 | 777.77 |         109 | ***
++----+------------+--------+-------------+
+*/
+
