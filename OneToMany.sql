@@ -253,3 +253,23 @@ LEFT JOIN orders
 | Bette      | Davis     | 1999-04-11 | 450.25 |
 +------------+-----------+------------+--------+
 */
+
+----------------------------------------------------------------------------------------
+LEFT JOIN with GROUP BY and SUM()
+
+Ex. -- see amount summary from all orders of each customer
+SELECT first_name, last_name, SUM(amount) FROM customers
+LEFT JOIN orders
+    ON customers.id = orders.customer_id
+GROUP BY customers.id;
+/*
++------------+-----------+-------------+
+| first_name | last_name | SUM(amount) |
++------------+-----------+-------------+
+| Boy        | George    |      135.49 |
+| George     | Michael   |      813.17 |
+| David      | Bowie     |        NULL |
+| Blue       | Steele    |        NULL |
+| Bette      | Davis     |      450.25 |
++------------+-----------+-------------+
+*/
