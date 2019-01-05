@@ -367,3 +367,22 @@ SELECT * FROM orders;
 +----+------------+--------+-------------+
 */
 
+Using RIGHT JOIN
+-- Select everything from Table B, along with any matching records in Table A
+Ex.
+SELECT first_name, last_name, order_date, amount FROM customers
+RIGHT JOIN orders
+    ON customers.id = orders.customer_id;
+/*
++------------+-----------+------------+--------+
+| first_name | last_name | order_date | amount |
++------------+-----------+------------+--------+
+| Boy        | George    | 2016-02-10 |  99.99 |
+| Boy        | George    | 2017-11-11 |  35.50 |
+| George     | Michael   | 2014-12-12 | 800.67 |
+| George     | Michael   | 2015-01-03 |  12.50 |
+| Bette      | Davis     | 1999-04-11 | 450.25 |
+| NULL       | NULL      | 2017-11-05 |  23.45 |
+| NULL       | NULL      | 2019-01-04 | 777.77 |
++------------+-----------+------------+--------+
+*/
