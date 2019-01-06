@@ -279,3 +279,34 @@ GROUP BY genre;
 | Drama     |       8.04 |
 +-----------+------------+
 */
+
+--------------------------------------------------------------------------
+-- Challenge 6
+SELECT 
+    first_name, 
+    last_name, 
+    COUNT(rating) AS COUNT, 
+    IFNULL(MIN(rating), '0.0') AS MIN, 
+    IFNULL(MAX(rating), '0.0') AS MAX, 
+    IFNULL(AVG(rating), '0.00000') AS AVG,
+CASE 
+    WHEN COUNT(rating) = 0 THEN 'INACTIVE'
+    ELSE 'ACTIVE'
+    END AS STATUS
+FROM reviewers
+LEFT JOIN reviews
+    ON reviewer_id = reviewers.id
+GROUP BY first_name, last_name;
+/*
++------------+-----------+-------+-----+-----+---------+----------+
+| first_name | last_name | COUNT | MIN | MAX | AVG     | STATUS   |
++------------+-----------+-------+-----+-----+---------+----------+
+| Thomas     | Stoneman  |     5 | 7.0 | 9.5 | 8.02000 | ACTIVE   |
+| Wyatt      | Skaggs    |     9 | 5.5 | 9.3 | 7.80000 | ACTIVE   |
+| Kimbra     | Masters   |     9 | 6.8 | 9.0 | 7.98889 | ACTIVE   |
+| Domingo    | Cortes    |    10 | 5.8 | 9.1 | 7.83000 | ACTIVE   |
+| Colt       | Steele    |    10 | 4.5 | 9.9 | 8.77000 | ACTIVE   |
+| Pinkie     | Petit     |     4 | 4.3 | 8.8 | 7.25000 | ACTIVE   |
+| Marlon     | Crafford  |     0 | 0.0 | 0.0 | 0.00000 | INACTIVE |
++------------+-----------+-------+-----+-----+---------+----------+
+*/
