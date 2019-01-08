@@ -10,4 +10,22 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT NOW()
 );
 
+-- Adding data to users table
+INSERT INTO users (username) VALUES
+('Katniss'),
+('Sammy'),
+('Ringo'),
+('Percy');
+
+SELECT * FROM users;
+/*
++----+----------+---------------------+
+| id | username | created_at          |
++----+----------+---------------------+
+|  1 | Katniss  | 2019-01-08 00:50:51 |
+|  2 | Sammy    | 2019-01-08 00:50:51 |
+|  3 | Ringo    | 2019-01-08 00:50:51 |
+|  4 | Percy    | 2019-01-08 00:50:51 |
++----+----------+---------------------+
+*/
 
