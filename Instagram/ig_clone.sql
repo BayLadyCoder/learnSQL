@@ -94,3 +94,35 @@ INSERT INTO comments (comment_text, user_id, photo_id) VALUES
 |  4 | I miss you           |       2 |        2 | 2019-01-08 01:09:15 |
 +----+----------------------+---------+----------+---------------------+
 */
+-- -------------------------------------------------------------
+-- likes table
+-- PRIMARY KEY (user_id, photo_id) makes sure one user can only give one like per photo
+CREATE TABLE likes (
+    user_id INT NOT NULL,
+    photo_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (photo_id) REFERENCES photos(id),
+    PRIMARY KEY (user_id, photo_id)
+);
+
+-- Add likes
+INSERT INTO likes (user_id, photo_id) VALUES
+(1,1),
+(1,2),
+(3,2),
+(4,1);
+/*
++---------+----------+---------------------+
+| user_id | photo_id | created_at          |
++---------+----------+---------------------+
+|       1 |        1 | 2019-01-08 01:17:36 |
+|       1 |        2 | 2019-01-08 01:17:36 |
+|       3 |        2 | 2019-01-08 01:17:36 |
+|       4 |        1 | 2019-01-08 01:17:36 |
++---------+----------+---------------------+
+*/
+
+-- Try to insert a duplicate id (like more than one time) will get an error
+INSERT INTO likes (user_id, photo_id) VALUES (1,1);
+-- ERROR 1062 (23000): Duplicate entry '1-1' for key 'PRIMARY'
