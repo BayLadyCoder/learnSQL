@@ -16,8 +16,6 @@ INSERT INTO users (username) VALUES
 ('Sammy'),
 ('Ringo'),
 ('Percy');
-
-SELECT * FROM users;
 /*
 +----+----------+---------------------+
 | id | username | created_at          |
@@ -67,4 +65,32 @@ JOIN users
 | /catToys  | Sammy    |
 | /catFood  | Sammy    |
 +-----------+----------+
+*/
+-- -------------------------------------------------------------
+-- comments table
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    comment_text VARCHAR(255) NOT NULL,
+    user_id INT NOT NULL,
+    photo_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (photo_id) REFERENCES photos(id)
+);
+
+-- add data to comments table
+INSERT INTO comments (comment_text, user_id, photo_id) VALUES
+('That cat is so cute!', 3, 1),
+('I agree!!', 4, 1),
+('love those toys', 3, 2),
+('I miss you', 2, 2);
+/*
++----+----------------------+---------+----------+---------------------+
+| id | comment_text         | user_id | photo_id | created_at          |
++----+----------------------+---------+----------+---------------------+
+|  1 | That cat is so cute! |       3 |        1 | 2019-01-08 01:09:15 |
+|  2 | I agree!!            |       4 |        1 | 2019-01-08 01:09:15 |
+|  3 | love those toys      |       3 |        2 | 2019-01-08 01:09:15 |
+|  4 | I miss you           |       2 |        2 | 2019-01-08 01:09:15 |
++----+----------------------+---------+----------+---------------------+
 */
